@@ -93,8 +93,7 @@ Widget addSmallEditText(TextEditingController controller, String hintText) {
     decoration: InputDecoration(
         hintText: hintText.tr,
         hintStyle: TextStyle(
-            fontSize: getNormalTextFontSIze(),
-            color: ColorConstants.black),
+            fontSize: getNormalTextFontSIze()),
         border: InputBorder.none),
   );
 }
@@ -960,6 +959,7 @@ showDocumentPopup(BuildContext context,String title){
 }
 
 Future<void> showPicker(BuildContext context) async {
+  Get.focusScope!.unfocus();
   final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),

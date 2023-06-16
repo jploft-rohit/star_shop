@@ -44,53 +44,50 @@ class NotificationView extends GetView<NotificationController> {
   }
 
   Widget buildNotificationItem(int index) {
-    return FadeInRight(
-      duration: Duration(milliseconds: 200 * (index + 1)),
-      child: GestureDetector(
-        onTap: () {
-          if (index == 0) {
-            Get.dialog(const OrderReceivedDialog());
-          } else if (index == 1) {
-            Get.dialog(const OrderChangedDialog());
-          } else if (index == 2) {
-            Get.dialog(const OrderCancelledDialog());
-          } else if (index == 3) {
-            Get.dialog(const RefundRequestDialog());
-          } else if (index == 4) {
-            Get.dialog(const PaymentReceivedDialog());
-          }
-        },
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: ColorConstants.primaryColor),
-                borderRadius: getCurvedBorderRadius(),
-              ),
-              child: SvgPicture.asset(
-                'assets/images/user.svg',
-                height: 4.h,
-              ),
+    return GestureDetector(
+      onTap: () {
+        if (index == 0) {
+          Get.dialog(const OrderReceivedDialog());
+        } else if (index == 1) {
+          Get.dialog(const OrderChangedDialog());
+        } else if (index == 2) {
+          Get.dialog(const OrderCancelledDialog());
+        } else if (index == 3) {
+          Get.dialog(const RefundRequestDialog());
+        } else if (index == 4) {
+          Get.dialog(const PaymentReceivedDialog());
+        }
+      },
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorConstants.primaryColor),
+              borderRadius: getCurvedBorderRadius(),
             ),
-            Expanded(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                addText('Ahmed', getNormalTextFontSIze(), ColorConstants.black,
-                    FontWeight.w500),
-                addText('Lorem Ipsum is simply dummy', getSmallTextFontSIze(),
-                    ColorConstants.gretTextColor, FontWeight.normal),
-              ],
-            )),
-            addText('7:30 pm  - 05/05/2022', getSmallestTextFontSIze(),
-                ColorConstants.lightTextColor, FontWeight.w500),
-            const SizedBox(
-              width: 10,
+            child: SvgPicture.asset(
+              'assets/images/user.svg',
+              height: 4.h,
             ),
-          ],
-        ),
+          ),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              addText('Ahmed', getNormalTextFontSIze(), ColorConstants.black,
+                  FontWeight.w500),
+              addText('Lorem Ipsum is simply dummy', getSmallTextFontSIze(),
+                  ColorConstants.gretTextColor, FontWeight.normal),
+            ],
+          )),
+          addText('7:30 pm  - 05/05/2022', getSmallestTextFontSIze(),
+              ColorConstants.lightTextColor, FontWeight.w500),
+          const SizedBox(
+            width: 10,
+          ),
+        ],
       ),
     );
   }

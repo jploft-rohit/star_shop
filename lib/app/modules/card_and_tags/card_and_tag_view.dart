@@ -29,142 +29,140 @@ class CardAndTagsView extends GetView<CardAndTagsController> {
       body: Container(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          child: FadeInUp(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      borderRadius: getCurvedBorderRadius(),
-                      border: Border.all(color: ColorConstants.borderColor2)),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: getCurvedBorderRadius(),
-                          border: Border.all(color: ColorConstants.primaryColor),
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/images/user.svg',
-                          height: getLargeTextFontSIze() * 2,
-                        ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    borderRadius: getCurvedBorderRadius(),
+                    border: Border.all(color: ColorConstants.borderColor2)),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: getCurvedBorderRadius(),
+                        border: Border.all(color: ColorConstants.primaryColor),
                       ),
-                      const SizedBox(
-                        width: 10,
+                      child: SvgPicture.asset(
+                        'assets/images/user.svg',
+                        height: getLargeTextFontSIze() * 2,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          buildInfoItems('Name', 'Rahish'),
-                          buildInfoItems('ID', '#168435'),
-                          buildInfoItems('Designation', 'Driver'),
-                        ],
-                      ),
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: (){
-                          Get.dialog(Scaffold(
-                            backgroundColor: Colors.transparent,
-                            body: Center(
-                              child: Container(
-                                width: 100.w,
-                                margin: const EdgeInsets.symmetric(horizontal: 20),
-                                padding:
-                                const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 20),
-                                decoration: BoxDecoration(
-                                    borderRadius: getCurvedBorderRadius(),
-                                    border: Border.all(color: ColorConstants.borderColor),
-                                    color: ColorConstants.white),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(
-                                      height: 2.h,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () => Get.back(),
-                                          child: const Icon(
-                                            Icons.close,
-                                            color: Colors.transparent,
-                                          ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildInfoItems('Name', 'Rahish'),
+                        buildInfoItems('ID', '#168435'),
+                        buildInfoItems('Designation', 'Driver'),
+                      ],
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      onTap: (){
+                        Get.dialog(Scaffold(
+                          backgroundColor: Colors.transparent,
+                          body: Center(
+                            child: Container(
+                              width: 100.w,
+                              margin: const EdgeInsets.symmetric(horizontal: 20),
+                              padding:
+                              const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 20),
+                              decoration: BoxDecoration(
+                              borderRadius: getCurvedBorderRadius(),
+                              border: Border.all(color: ColorConstants.borderColor),
+                              color: ColorConstants.white),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(
+                                    height: 2.h,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () => Get.back(),
+                                        child: const Icon(
+                                          Icons.close,
+                                          color: Colors.transparent,
                                         ),
-                                        addText('Qr Code', getSubheadingTextFontSIze(),
-                                            ColorConstants.black, FontWeight.bold),
-                                        GestureDetector(
-                                          onTap: () => Get.back(),
-                                          child: const Icon(
-                                            Icons.close,
-                                            color: ColorConstants.borderColor,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 2.h,
-                                    ),
-                                    SvgPicture.asset('assets/images/qrcode.svg',width: 60.w,),
-                                    SizedBox(
-                                      height: 2.h,
-                                    ),
-                                  ],
-                                ),
+                                      ),
+                                      addText('Qr Code', getSubheadingTextFontSIze(),
+                                          ColorConstants.black, FontWeight.bold),
+                                      GestureDetector(
+                                        onTap: () => Get.back(),
+                                        child: const Icon(
+                                          Icons.close,
+                                          color: ColorConstants.borderColor,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 2.h,
+                                  ),
+                                  SvgPicture.asset('assets/images/qrcode.svg',width: 60.w,),
+                                  SizedBox(
+                                    height: 2.h,
+                                  ),
+                                ],
                               ),
                             ),
-                          ));
-                        }, child: SvgPicture.asset('assets/images/qrcode.svg'),
-                      )
-                    ],
-                  ),
+                          ),
+                        ));
+                      }, child: SvgPicture.asset('assets/images/qrcode.svg'),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 3.h,
-                ),
-                addText('Select Options :', getSubheadingTextFontSIze(),
-                    ColorConstants.black, FontWeight.bold),
-                SizedBox(
-                  height: 2.h,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed(Routes.requestCardTagsView);
-                  },
-                  child: buildOptionsWidget('Request Cards & Tags'),
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    showProgramNFCDialogue(context);
-                  },
-                  child: buildOptionsWidget('Synchronise NFC to Cards & Tags'),
-                ),
-                SizedBox(
-                  height: 3.h,
-                ),
-                addText('Linked Card & Tag :', getSubheadingTextFontSIze(),
-                    ColorConstants.black, FontWeight.bold),
-                SizedBox(
-                  height: 2.h,
-                ),
-                buildLinkedCards(context),
-                SizedBox(
-                  height: 3.h,
-                ),
-                addText('Requests :', getSubheadingTextFontSIze(),
-                    ColorConstants.black, FontWeight.bold),
-                SizedBox(
-                  height: 2.h,
-                ),
-                buildRequests(context),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 3.h,
+              ),
+              addText('Select Options :', getSubheadingTextFontSIze(),
+                  ColorConstants.black, FontWeight.bold),
+              SizedBox(
+                height: 2.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.requestCardTagsView);
+                },
+                child: buildOptionsWidget('Request Cards & Tags'),
+              ),
+              SizedBox(
+                height: 1.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  showProgramNFCDialogue(context);
+                },
+                child: buildOptionsWidget('Synchronise NFC to Cards & Tags'),
+              ),
+              SizedBox(
+                height: 3.h,
+              ),
+              addText('Linked Card & Tag :', getSubheadingTextFontSIze(),
+                  ColorConstants.black, FontWeight.bold),
+              SizedBox(
+                height: 2.h,
+              ),
+              buildLinkedCards(context),
+              SizedBox(
+                height: 3.h,
+              ),
+              addText('Requests :', getSubheadingTextFontSIze(),
+                  ColorConstants.black, FontWeight.bold),
+              SizedBox(
+                height: 2.h,
+              ),
+              buildRequests(context),
+            ],
           ),
         ),
       ),
@@ -197,7 +195,7 @@ class CardAndTagsView extends GetView<CardAndTagsController> {
               ),
               Row(
                 children: [
-                  addText('Card No. :', getSmallTextFontSIze() + 1,
+                  addText('Tag No. :', getSmallTextFontSIze() + 1,
                       ColorConstants.black, FontWeight.normal),
                   addText(
                       ' 4587 9857 4587 6521',
@@ -267,7 +265,7 @@ class CardAndTagsView extends GetView<CardAndTagsController> {
                   Row(
                     children: [
                       addText(
-                          'Deactivation Card No. :',
+                          'Deactivation Tag No. :',
                           getSmallTextFontSIze() + 1,
                           ColorConstants.black,
                           FontWeight.normal),

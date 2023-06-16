@@ -152,7 +152,7 @@ class PaymentReceivedDialog extends GetView<NotificationController>{
             ),
           ),
           TextSpan(
-              text: "Received on Order Id".tr,
+              text: "Received on Order ID".tr,
               style: TextStyle(
                 fontFamily: 'Ariel',
                 fontSize: getNormalTextFontSIze(),

@@ -105,7 +105,7 @@ class RefundRequestDialog extends GetView<NotificationController>{
                 ), child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildInfoItems('Order Id', '#568414'),
+                  buildInfoItems('Order ID', '#568414'),
                   buildInfoItems('Order Total', '42 AED'),
                   buildInfoItems('Items', '4'),
                   buildInfoItems('Order Date', '01/08/2023'),

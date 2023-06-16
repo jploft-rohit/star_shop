@@ -52,47 +52,47 @@ class MedicalRecordController extends GetxController {
   final infectiousDiseaseList2 = [
     {
       'title' : 'Diphtheria',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Dysentery',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Infective Hepatitis',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Measles',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Mumps',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Poliomyelitis',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Rubella',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Scarlet Fever',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
       'title' : 'Tuberculosis',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
     {
@@ -102,7 +102,7 @@ class MedicalRecordController extends GetxController {
     },
     {
       'title' : 'Chicken Pox',
-      'isSelected' : -1,
+      'isSelected' : 1,
       'isSelected1' : -1,
     },
   ].obs;

@@ -63,7 +63,7 @@ class AbsentReasonDialog extends GetView<AttendanceController> {
                   Flexible(
                       flex: 3,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
                         decoration: getEditTextDecoration(),
                         child: buildLineEditText(
                             controller.reasonController!, 'Type here.....'),
@@ -86,12 +86,16 @@ class AbsentReasonDialog extends GetView<AttendanceController> {
                   Flexible(
                       flex: 3,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 10.w, vertical: 10),
+                                horizontal: 4.w, vertical: 10,
+                            ),
+                            width: double.infinity,
+                            alignment: Alignment.centerLeft,
                             decoration: getEditTextDecoration(),
-                            child: addAlignedText(
+                            child: addText(
                                 'Upload Document',
                                 getNormalTextFontSIze(),
                                 ColorConstants.black,
@@ -100,11 +104,14 @@ class AbsentReasonDialog extends GetView<AttendanceController> {
                           const SizedBox(
                             height: 5,
                           ),
-                          addText(
-                              'Photo Uploaded 132KB',
-                              getSmallTextFontSIze() - 1,
-                              ColorConstants.blue,
-                              FontWeight.normal)
+                          Padding(
+                            padding: EdgeInsets.only(left: 4.w),
+                            child: addText(
+                                'Photo Uploaded 132KB',
+                                getSmallTextFontSIze() - 1,
+                                ColorConstants.blue,
+                                FontWeight.normal),
+                          )
                         ],
                       )),
                 ],

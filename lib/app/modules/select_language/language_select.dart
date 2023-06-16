@@ -60,59 +60,57 @@ class LanguageSelectView extends GetView<LanguageSelectController> {
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return FadeInUp(
-                            child: GestureDetector(
-                              onTap: () async {
-                                controller.selectedPos.value = index;
-                              },
-                              child: Obx(
-                                () => Container(
-                                  width: 38.w,
-                                  margin:  EdgeInsets.symmetric(horizontal: 2.w),
-                                  padding: EdgeInsets.symmetric(vertical: 1.5.h),
-                                  decoration: BoxDecoration(
-                                      color: controller.selectedPos.value == index ? ColorConstants.primaryColorLight : ColorConstants.white,
-                                      boxShadow: [getDeepBoxShadow()],
-                                      border: controller.selectedPos.value == index ? Border.all(color: ColorConstants.primaryColor,width: 1.5) : null,
-                                      borderRadius: getCurvedBorderRadius()),
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 20),
-                                    child: Stack(
-                                      children: [
+                          return GestureDetector(
+                            onTap: () async {
+                              controller.selectedPos.value = index;
+                            },
+                            child: Obx(
+                              () => Container(
+                                width: 38.w,
+                                margin:  EdgeInsets.symmetric(horizontal: 2.w),
+                                padding: EdgeInsets.symmetric(vertical: 1.5.h),
+                                decoration: BoxDecoration(
+                                    color: controller.selectedPos.value == index ? ColorConstants.primaryColorLight : ColorConstants.white,
+                                    boxShadow: [getDeepBoxShadow()],
+                                    border: controller.selectedPos.value == index ? Border.all(color: ColorConstants.primaryColor,width: 1.5) : null,
+                                    borderRadius: getCurvedBorderRadius()),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 20),
+                                  child: Stack(
+                                    children: [
 
-                                        Visibility(
-                                            maintainSize: true,
-                                            maintainAnimation: true,
-                                            maintainState: true,
-                                            visible: controller.selectedPos.value == index ? true : false,
-                                            child: Align(
-                                              alignment: Alignment.topRight,
-                                              child: Container(
-                                                padding: const EdgeInsets.all(3),
-                                                decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    color: ColorConstants.primaryColor,
-                                                    boxShadow: [getDeepBoxShadow()],
-                                                    border: Border.all(color: ColorConstants.white,width: 2)
-                                                ),child: const Icon(Icons.check,color: ColorConstants.white,size: 15,),
-                                              ),
-                                            )),
+                                      Visibility(
+                                          maintainSize: true,
+                                          maintainAnimation: true,
+                                          maintainState: true,
+                                          visible: controller.selectedPos.value == index ? true : false,
+                                          child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: Container(
+                                              padding: const EdgeInsets.all(3),
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: ColorConstants.primaryColor,
+                                                  boxShadow: [getDeepBoxShadow()],
+                                                  border: Border.all(color: ColorConstants.white,width: 2)
+                                              ),child: const Icon(Icons.check,color: ColorConstants.white,size: 15,),
+                                            ),
+                                          )),
 
-                                        Center(
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              SvgPicture.asset(controller.languageImageList[index]),
-                                              SizedBox(height: 2.h,),
-                                              addText(controller.languageList[index], getNormalTextFontSIze(), controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.black, FontWeight.w600)
-                                            ],
-                                          ),
-                                        )
+                                      Center(
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(controller.languageImageList[index]),
+                                            SizedBox(height: 2.h,),
+                                            addText(controller.languageList[index], getNormalTextFontSIze(), controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.black, FontWeight.w600)
+                                          ],
+                                        ),
+                                      )
 
 
-                                      ],
-                                    ),
+                                    ],
                                   ),
                                 ),
                               ),

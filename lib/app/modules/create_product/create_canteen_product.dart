@@ -32,66 +32,70 @@ class CreateCanteenProduct extends GetView<CreateProductController> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: () {},
-                    child: DottedBorder(
-                      borderType: BorderType.RRect,
-                      dashPattern: const [4, 4],
-                      radius: const Radius.circular(12),
-                      padding: const EdgeInsets.all(6),
-                      color: ColorConstants.lightGreyColor,
-                      child: ClipRRect(
-                        borderRadius: getCurvedBorderRadius(),
-                        child: SizedBox(
-                          height: 25.h,
-                          width: 40.w,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/ic_gallery.svg',
-                                height: getLargeTextFontSIze() * 2,
-                              ),
-                              addText(
-                                  'Upload from Albums',
-                                  getSmallTextFontSIze(),
-                                  ColorConstants.gretTextColor,
-                                  FontWeight.normal)
-                            ],
+                  Expanded(
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {},
+                      child: DottedBorder(
+                        borderType: BorderType.RRect,
+                        dashPattern: const [4, 4],
+                        radius: const Radius.circular(12),
+                        padding: const EdgeInsets.all(6),
+                        color: ColorConstants.lightGreyColor,
+                        child: ClipRRect(
+                          borderRadius: getCurvedBorderRadius(),
+                          child: SizedBox(
+                            height: 25.h,
+                            width: 40.w,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/ic_gallery.svg',
+                                  height: getLargeTextFontSIze() * 2,
+                                ),
+                                addText(
+                                    'Upload from Albums',
+                                    getSmallTextFontSIze(),
+                                    ColorConstants.gretTextColor,
+                                    FontWeight.normal)
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(width: 10,),
-                  GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: () {},
-                    child: DottedBorder(
-                      borderType: BorderType.RRect,
-                      radius: const Radius.circular(12),
-                      dashPattern: const [4, 4],
-                      padding: const EdgeInsets.all(6),
-                      color: ColorConstants.lightGreyColor,
-                      child: ClipRRect(
-                        borderRadius: getCurvedBorderRadius(),
-                        child: SizedBox(
-                          height: 25.h,
-                          width: 40.w,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/ic_camera.svg',
-                                height: getLargeTextFontSIze() * 2,
-                              ),
-                              addText(
-                                  'Camera',
-                                  getSmallTextFontSIze(),
-                                  ColorConstants.gretTextColor,
-                                  FontWeight.normal)
-                            ],
+                  Expanded(
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {},
+                      child: DottedBorder(
+                        borderType: BorderType.RRect,
+                        radius: const Radius.circular(12),
+                        dashPattern: const [4, 4],
+                        padding: const EdgeInsets.all(6),
+                        color: ColorConstants.lightGreyColor,
+                        child: ClipRRect(
+                          borderRadius: getCurvedBorderRadius(),
+                          child: SizedBox(
+                            height: 25.h,
+                            width: 40.w,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/ic_camera.svg',
+                                  height: getLargeTextFontSIze() * 2,
+                                ),
+                                addText(
+                                    'Camera',
+                                    getSmallTextFontSIze(),
+                                    ColorConstants.gretTextColor,
+                                    FontWeight.normal)
+                              ],
+                            ),
                           ),
                         ),
                       ),

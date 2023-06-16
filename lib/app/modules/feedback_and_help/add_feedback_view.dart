@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
+import 'package:star_shop/app/modules/feedback_and_help/select_person_dialog.dart';
 import '../../../common/app_header.dart';
 import '../../../common/bordered_button.dart';
 import '../../../common/color_constants.dart';
@@ -49,10 +49,21 @@ class AddFeedbackView extends GetView<AddFeedbackController>{
             ),
 
             SizedBox(height: 2.h,),
-            Container(
-              width: 100.w,
-              decoration: getEditTextDecoration(),
-              child: buildDropDown(controller.optionsList, controller.selectedWho, 'Select Type'),
+            GestureDetector(
+              onTap: (){
+                showSelectPersonDialog();
+              },
+              child: Container(
+                width: 100.w,
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 16),
+                decoration: getEditTextDecoration(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    addText('Select person', getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
+                  ],
+                ),
+              ),
             ),
 
             SizedBox(height: 2.h,),
@@ -98,6 +109,10 @@ class AddFeedbackView extends GetView<AddFeedbackController>{
         ),
       ),
     );
+  }
+
+  void showSelectPersonDialog() {
+    Get.dialog(const SelectPersonDialog());
   }
 
 

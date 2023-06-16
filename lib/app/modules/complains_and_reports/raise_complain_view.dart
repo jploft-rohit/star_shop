@@ -21,7 +21,7 @@ class RaiseComplainView extends GetView<RaiseComplainController>{
       backgroundColor: ColorConstants.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(7.h),
-          child: AppHeader(
+          child: const AppHeader(
             showBackIcon: true,
             title: 'Raise Complaint & report',
           )),
@@ -73,26 +73,24 @@ class RaiseComplainView extends GetView<RaiseComplainController>{
                 },
                 child: Container(
                   width: 100.w,
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 16),
                   decoration: getEditTextDecoration(),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       addText('Select person', getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
-                      const Icon(Icons.arrow_drop_down,color: ColorConstants.lightGreyColor,size: 30,)
                     ],
                   ),
                 ),
               ),
 
-              SizedBox(height: 2.h,),
+              SizedBox(height: 2.h),
               Container(
                 width: 100.w,
                 decoration: getEditTextDecoration(),
                 child: buildDropDown(controller.complainTypeList, controller.selectedComplainType2, 'Complaint type'),
               ),
-
-              SizedBox(height: 2.h,),
+              SizedBox(height: 2.h),
               Container(
                 width: 100.w,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -130,15 +128,12 @@ class RaiseComplainView extends GetView<RaiseComplainController>{
                 },
                 child: BorderedButton(width: 40.w, text: controller.isEdit.value ? 'UPDATE' : 'SUBMIT'),
               )
-
             ],
           ),
         ),
       ),
     );
   }
-
-
 
   Widget buildDropDown(List<String> list,RxString selectedValue,String hint) {
     return DropdownButtonHideUnderline(

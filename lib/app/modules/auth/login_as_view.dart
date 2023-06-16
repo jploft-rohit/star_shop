@@ -1,3 +1,4 @@
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -78,55 +79,52 @@ class LoginAsView extends GetView<AuthController>{
 
 
   Widget buildItem(int index){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        width: 38.w,
-        margin:  EdgeInsets.symmetric(horizontal: 2.w),
-        padding: EdgeInsets.symmetric(vertical: 1.5.h),
-        decoration: BoxDecoration(
-            color: controller.selectedPos.value == index ? ColorConstants.primaryColorLight : ColorConstants.white,
-            boxShadow: [getDeepBoxShadow()],
-            border: controller.selectedPos.value == index ? Border.all(color: ColorConstants.primaryColor,width: 1.5) : null,
-            borderRadius: getCurvedBorderRadius()),
-        child: Padding(
-          padding:
-          const EdgeInsets.symmetric(horizontal: 20),
-          child: Stack(
-            children: [
+    return Container(
+      width: 38.w,
+      margin:  EdgeInsets.symmetric(horizontal: 2.w),
+      padding: EdgeInsets.symmetric(vertical: 1.5.h),
+      decoration: BoxDecoration(
+          color: controller.selectedPos.value == index ? ColorConstants.primaryColorLight : ColorConstants.white,
+          boxShadow: [getDeepBoxShadow()],
+          border: controller.selectedPos.value == index ? Border.all(color: ColorConstants.primaryColor,width: 1.5) : null,
+          borderRadius: getCurvedBorderRadius()),
+      child: Padding(
+        padding:
+        const EdgeInsets.symmetric(horizontal: 20),
+        child: Stack(
+          children: [
 
-              Visibility(
-                  maintainSize: true,
-                  maintainAnimation: true,
-                  maintainState: true,
-                  visible: true,
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      padding: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.lightGreyColor,
-                          boxShadow: [getDeepBoxShadow()],
-                          border: Border.all(color: ColorConstants.white,width: 2)
-                      ),child: const Icon(Icons.check,color: ColorConstants.white,size: 15,),
-                    ),
-                  )),
+            Visibility(
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                visible: true,
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.lightGreyColor,
+                        boxShadow: [getDeepBoxShadow()],
+                        border: Border.all(color: ColorConstants.white,width: 2)
+                    ),child: const Icon(Icons.check,color: ColorConstants.white,size: 15,),
+                  ),
+                )),
 
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(controller.roleImagesList[index]),
-                    SizedBox(height: 2.h,),
-                    addText(controller.roleNameList[index], getSmallTextFontSIze()+1, controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.black, FontWeight.w600)
-                  ],
-                ),
-              )
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(controller.roleImagesList[index]),
+                  SizedBox(height: 2.h,),
+                  addText(controller.roleNameList[index], getSmallTextFontSIze()+1, controller.selectedPos.value == index ? ColorConstants.primaryColor : ColorConstants.black, FontWeight.w600)
+                ],
+              ),
+            )
 
 
-            ],
-          ),
+          ],
         ),
       ),
     );

@@ -20,7 +20,7 @@ class NotifyAuthoritiesView extends GetView<NotifyAuthoritiesController> {
       backgroundColor: ColorConstants.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(5.h),
-          child: AppHeader(
+          child: const AppHeader(
             showBackIcon: true,
             title: 'Notify Bus Driver',
           )),
@@ -190,10 +190,9 @@ class NotifyAuthoritiesView extends GetView<NotifyAuthoritiesController> {
                         ),
                       );
                     },
-                  )),
-              SizedBox(
-                height: 2.h,
+                  ),
               ),
+              SizedBox(height: 2.h),
               GestureDetector(
                 onTap: () {
                   for (int i = 0; i < controller.selectedReasonList.length; i++) {
@@ -203,7 +202,7 @@ class NotifyAuthoritiesView extends GetView<NotifyAuthoritiesController> {
                 },
                 child: BorderedButton(
                     width: 2,
-                    text: 'SUBMIT',
+                    text: 'NOTIFY',
                     borderRadius: getCustomBorderRadius(15)),
               )
             ],

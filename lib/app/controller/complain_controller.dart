@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ComplainController extends GetxController
-    with GetSingleTickerProviderStateMixin {
+class ComplainController extends GetxController with GetSingleTickerProviderStateMixin {
+
   final selectedSchool = 'Ignite Public School'.obs;
   final List<String> schoolItems = [
     'Ignite Public School',

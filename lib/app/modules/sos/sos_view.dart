@@ -909,30 +909,21 @@ class SosView extends GetView<SosController> {
         children: [
           Row(
             children: [
-              Transform.scale(
-                scale: 1.07,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: ColorConstants.primaryColor,
-                      width: 1,
-                    ),
+              Container(
+                width: 40,
+                height: 45,
+                padding: EdgeInsets.symmetric(vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: ColorConstants.primaryColor,
+                    width: 1,
                   ),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 5,
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/images/student.svg',
-                          height: 32,
-                        ),
-                      ),
-                    ],
-                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: SvgPicture.asset(
+                  'assets/images/student.svg',
+                  height: 32,
                 ),
               ),
               Padding(

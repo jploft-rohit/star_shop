@@ -116,7 +116,7 @@ class TransactionDetailDialog extends GetView<TransactionRecordController>{
                                   children: [
                                     addText('Zoya', getNormalTextFontSIze(), ColorConstants.black, FontWeight.bold),
                                     const SizedBox(height: 3,),
-                                    addText('Order Id : #632541', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
+                                    addText('Order ID : #632541', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
                                     const SizedBox(height: 3,),
                                     addText('TR No : #632541', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
                                     const SizedBox(height: 3,),

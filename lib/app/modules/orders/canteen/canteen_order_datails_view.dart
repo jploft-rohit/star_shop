@@ -146,41 +146,38 @@ class CanteenOrderDetailView extends GetView<OrderCanteenController> {
   }
 
   Widget buildItem(int index,BuildContext context){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        width: 100.w,
-        padding: const  EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 10),
-        decoration: BoxDecoration(
-            borderRadius: getCurvedBorderRadius(),
-            boxShadow: [getDeepBoxShadow()],
-            color: ColorConstants.white
-        ),
-        child: Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                    borderRadius: getCurvedBorderRadius(),
-                  //  child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 20.w,height: 20.w,fit: BoxFit.cover,)),
-                    child: Image.asset('assets/images/im_canteen_0${index+1}.png',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
-                SizedBox(width: 5.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 1.h,),
-                    addText('Mango Juice', getSubheadingTextFontSIze(), ColorConstants.black, FontWeight.w500),
-                    SizedBox(height: 0.5.h,),
-                    addText('4 AED', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
-                  ],
-                )
-              ],
-            ),
+    return Container(
+      width: 100.w,
+      padding: const  EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: getCurvedBorderRadius(),
+          boxShadow: [getDeepBoxShadow()],
+          color: ColorConstants.white
+      ),
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                  borderRadius: getCurvedBorderRadius(),
+                //  child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 20.w,height: 20.w,fit: BoxFit.cover,)),
+                  child: Image.asset('assets/images/im_canteen_0${index+1}.png',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+              SizedBox(width: 5.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 1.h,),
+                  addText('Mango Juice', getSubheadingTextFontSIze(), ColorConstants.black, FontWeight.w500),
+                  SizedBox(height: 0.5.h,),
+                  addText('4 AED', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
+                ],
+              )
+            ],
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }

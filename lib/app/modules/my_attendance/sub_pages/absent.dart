@@ -108,7 +108,7 @@ class AttendanceAbsent extends GetView<AttendanceController>{
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SvgPicture.asset(
-                              'assets/images/ic_chat.svg',
+                              'assets/images/report.svg',
                               height: getNormalTextFontSIze(),
                             ),
                             const SizedBox(

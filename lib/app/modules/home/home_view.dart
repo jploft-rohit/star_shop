@@ -109,67 +109,64 @@ class HomeView extends GetView<HomeController> {
                       childAspectRatio: 1.6,
                       mainAxisSpacing: 1.h
                   ),
-                  itemBuilder: (context, index) => FadeInUp(
-                    duration: Duration(milliseconds: 200*(index+1)),
-                    child: GestureDetector(
-                      onTap: () {
-                        if(index == 0){
-                          Get.toNamed(Routes.currentOrderView);
-                        } else if(index == 1){
-                          Get.toNamed(Routes.orderView);
-                        } else if(index == 2){
-                          Get.toNamed(Routes.orderView);
-                        } else if(index == 3){
-                          Get.toNamed(Routes.orderView);
-                        } else if(index == 4){
-                          Get.toNamed(Routes.orderView);
-                          Get.put(OrderCanteenController());
-                          Get.find<OrderCanteenController>().selectedTypePos.value = 0;
-                        } else if(index == 5){
-                          Get.toNamed(Routes.orderView);
-                          Get.put(OrderCanteenController());
-                          Get.find<OrderCanteenController>().selectedTypePos.value = 2;
-                        } else if(index == 6){
-                          // Get.toNamed(Routes.walletView,arguments: {
-                          //   'heading' : 'Today Transaction'
-                          // });
-                          Get.toNamed(Routes.transactionRecordView,arguments: {
-                            'type' : 'today'
-                          });
-                        } else if(index == 7){
-                          // Get.toNamed(Routes.walletView,arguments: {
-                          //   'heading' : 'Transactions Record'
-                          // });
-                          Get.toNamed(Routes.transactionRecordView,arguments: {
-                            'type' : 'record'
-                          });
-                        }
-                      },
-                      child: Container(
-                        margin: index.isEven
-                            ? const EdgeInsets.only(left: 0, bottom: 10)
-                            : const EdgeInsets.only(right: 0, bottom: 10),
-                        decoration: BoxDecoration(
-                            boxShadow: [getDeepBoxShadow()],
-                            color: ColorConstants.white,
-                            borderRadius: getCurvedBorderRadius()),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            addAlignedText(
-                                controller.gridList[index].title,
-                                getNormalTextFontSIze(),
-                                ColorConstants.black,
-                                FontWeight.bold),
-                            SizedBox(height: 0.5.h,),
-                            addAlignedText(
-                                controller.gridList[index].count,
-                                getLargeTextFontSIze(),
-                                ColorConstants.primaryColor,
-                                FontWeight.bold),
-                          ],
-                        ),
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      if(index == 0){
+                        Get.toNamed(Routes.currentOrderView);
+                      } else if(index == 1){
+                        Get.toNamed(Routes.orderView);
+                      } else if(index == 2){
+                        Get.toNamed(Routes.orderView);
+                      } else if(index == 3){
+                        Get.toNamed(Routes.orderView);
+                      } else if(index == 4){
+                        Get.toNamed(Routes.orderView);
+                        Get.put(OrderCanteenController());
+                        Get.find<OrderCanteenController>().selectedTypePos.value = 0;
+                      } else if(index == 5){
+                        Get.toNamed(Routes.orderView);
+                        Get.put(OrderCanteenController());
+                        Get.find<OrderCanteenController>().selectedTypePos.value = 2;
+                      } else if(index == 6){
+                        // Get.toNamed(Routes.walletView,arguments: {
+                        //   'heading' : 'Today Transaction'
+                        // });
+                        Get.toNamed(Routes.transactionRecordView,arguments: {
+                          'type' : 'today'
+                        });
+                      } else if(index == 7){
+                        // Get.toNamed(Routes.walletView,arguments: {
+                        //   'heading' : 'Transactions Record'
+                        // });
+                        Get.toNamed(Routes.transactionRecordView,arguments: {
+                          'type' : 'record'
+                        });
+                      }
+                    },
+                    child: Container(
+                      margin: index.isEven
+                          ? const EdgeInsets.only(left: 0, bottom: 10)
+                          : const EdgeInsets.only(right: 0, bottom: 10),
+                      decoration: BoxDecoration(
+                          boxShadow: [getDeepBoxShadow()],
+                          color: ColorConstants.white,
+                          borderRadius: getCurvedBorderRadius()),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          addAlignedText(
+                              controller.gridList[index].title,
+                              getNormalTextFontSIze(),
+                              ColorConstants.black,
+                              FontWeight.bold),
+                          SizedBox(height: 0.5.h,),
+                          addAlignedText(
+                              controller.gridList[index].count,
+                              getLargeTextFontSIze(),
+                              ColorConstants.primaryColor,
+                              FontWeight.bold),
+                        ],
                       ),
                     ),
                   ),

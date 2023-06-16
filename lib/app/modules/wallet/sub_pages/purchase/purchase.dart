@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:star_shop/app/modules/wallet/sub_pages/purchase/transaction.dart';
+import 'package:star_shop/common/base_star_horizontal_filter.dart';
 
 import '../../../../../common/color_constants.dart';
 import '../../../../../common/utils.dart';
@@ -21,6 +22,7 @@ class Purchase extends GetView<PurchaseController>{
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+            const BaseStarHorizontalFilter(),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 0),
               padding: const EdgeInsets.all(20),

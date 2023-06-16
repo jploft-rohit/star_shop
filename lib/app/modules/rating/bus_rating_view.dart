@@ -32,7 +32,7 @@ class BusRatingView extends GetView<RatingController>{
                   border: Border.all(color: ColorConstants.borderColor),
                   color: ColorConstants.primaryColorLight),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
-              child: buildSchoolDropDown(controller.busItems, controller.selectedBusId, 'Select Bus Id', 100.w),
+              child: buildSchoolDropDown(controller.busItems, controller.selectedBusId, 'Select Bus ID', 100.w),
             ),
             SizedBox(height: 2.h,),
             Container(
@@ -120,7 +120,7 @@ class BusRatingView extends GetView<RatingController>{
               onTap: (){
                 showToast('Rating Submitted');
               },
-              child: CircularBorderedButton(width: 30.w, text: 'SEND'),
+              child: CircularBorderedButton(width: 30.w, text: 'SUBMIT'),
             )
           ],
         ),

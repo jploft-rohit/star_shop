@@ -47,7 +47,7 @@ class TodayTransactionView extends GetView<TransactionRecordController> {
                             width: 10,
                           ),
                           SvgPicture.asset(
-                            'assets/images/ic_teacher.svg',
+                            'assets/images/ic_staff.svg',
                             height: getHeadingTextFontSIze(),
                           ),
                           const SizedBox(

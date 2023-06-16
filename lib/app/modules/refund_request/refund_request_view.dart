@@ -226,220 +226,217 @@ class RefundRequestView extends GetView<RefundRequestController>{
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return FadeInUp(
-                    duration: Duration(milliseconds: 200*(index+1)),
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                      padding: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        boxShadow: [getBoxShadow()],
-                        borderRadius: getBorderRadius(),
-                        color: ColorConstants.white,
-                      ),
-                      child: Column(
-                        children: [
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+                    padding: const EdgeInsets.all(15.0),
+                    decoration: BoxDecoration(
+                      boxShadow: [getBoxShadow()],
+                      borderRadius: getBorderRadius(),
+                      color: ColorConstants.white,
+                    ),
+                    child: Column(
+                      children: [
 
-                          Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 0),
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: ColorConstants.borderColor2),
-                              borderRadius: getCustomBorderRadius(15),
-                            ),
-                            child: Row(
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 0),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: ColorConstants.borderColor2),
+                            borderRadius: getCustomBorderRadius(15),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration:  BoxDecoration(
+                                  borderRadius: getCustomBorderRadius(15),
+                                  border: Border.all(color: ColorConstants.primaryColor),
+                                ),
+                                child: SvgPicture.asset('assets/images/ic_driver.svg',height: getLargeTextFontSIze()*1.5,),
+                              ),
+                              const SizedBox(width: 10,),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+
+                                    buildInfoItems('Name', 'Rahish'),
+                                    buildInfoItems('Designation', 'Bus Driver'),
+
+                                  ],
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(height: 2.h,),
+                        Row(
+                          children: [
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration:  BoxDecoration(
-                                    borderRadius: getCustomBorderRadius(15),
-                                    border: Border.all(color: ColorConstants.primaryColor),
-                                  ),
-                                  child: SvgPicture.asset('assets/images/ic_driver.svg',height: getLargeTextFontSIze()*1.5,),
-                                ),
+                                SvgPicture.asset('assets/images/fab_calendar.svg',
+                                    height: getHeadingTextFontSIze()),
                                 const SizedBox(width: 10,),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-
-                                      buildInfoItems('Name', 'Rahish'),
-                                      buildInfoItems('Designation', 'Bus Driver'),
-
-                                    ],
-                                  ),
-                                ),
-
+                                addText('01/03/2022', getNormalTextFontSIze(),
+                                    ColorConstants.primaryColor, FontWeight.bold)
                               ],
                             ),
-                          ),
+                            const Spacer(),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(Icons.access_time,color: ColorConstants.primaryColor,size: getHeadingTextFontSIze(),),
+                                const SizedBox(width: 10,),
+                                addText('9:30 pm', getNormalTextFontSIze(),
+                                    ColorConstants.primaryColor, FontWeight.bold)
+                              ],
+                            ),
+                            const Spacer(),
+                          ],
+                        ),
+                        buildDivider(),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/images/ic_reason.svg',
+                              height: getHeadingTextFontSIze(),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            addText('Reason :', getSmallTextFontSIze() + 1,
+                                ColorConstants.black, FontWeight.normal),
+                            Expanded(
+                              child: addText(
+                                  ' Lorem Ipsum is simply dummy text...',
+                                  getSmallTextFontSIze() + 1,
+                                  ColorConstants.primaryColor,
+                                  FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        buildDivider(),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/images/ic_coins.svg',
+                              height: getHeadingTextFontSIze(),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            addText('Amount :', getSmallTextFontSIze() + 1,
+                                ColorConstants.black, FontWeight.normal),
+                            Expanded(
+                              child: addText(
+                                  ' 15 AED',
+                                  getSmallTextFontSIze() + 1,
+                                  ColorConstants.primaryColor,
+                                  FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        buildDivider(),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/images/ic_reason.svg',
+                              height: getHeadingTextFontSIze(),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            addText('Order ID :', getSmallTextFontSIze() + 1,
+                                ColorConstants.black, FontWeight.normal),
+                            Expanded(
+                              child: addText(
+                                  ' #546374',
+                                  getSmallTextFontSIze() + 1,
+                                  ColorConstants.primaryColor,
+                                  FontWeight.bold),
+                            ),
 
-                          SizedBox(height: 2.h,),
-                          Row(
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset('assets/images/fab_calendar.svg',
-                                      height: getHeadingTextFontSIze()),
-                                  const SizedBox(width: 10,),
-                                  addText('01/03/2022', getNormalTextFontSIze(),
-                                      ColorConstants.primaryColor, FontWeight.bold)
-                                ],
-                              ),
-                              const Spacer(),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.access_time,color: ColorConstants.primaryColor,size: getHeadingTextFontSIze(),),
-                                  const SizedBox(width: 10,),
-                                  addText('9:30 pm', getNormalTextFontSIze(),
-                                      ColorConstants.primaryColor, FontWeight.bold)
-                                ],
-                              ),
-                              const Spacer(),
-                            ],
-                          ),
-                          buildDivider(),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/ic_reason.svg',
-                                height: getHeadingTextFontSIze(),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              addText('Reason :', getSmallTextFontSIze() + 1,
-                                  ColorConstants.black, FontWeight.normal),
-                              Expanded(
-                                child: addText(
-                                    ' Lorem Ipsum is simply dummy text...',
-                                    getSmallTextFontSIze() + 1,
-                                    ColorConstants.primaryColor,
-                                    FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          buildDivider(),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/ic_coins.svg',
-                                height: getHeadingTextFontSIze(),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              addText('Amount :', getSmallTextFontSIze() + 1,
-                                  ColorConstants.black, FontWeight.normal),
-                              Expanded(
-                                child: addText(
-                                    ' 15 AED',
-                                    getSmallTextFontSIze() + 1,
-                                    ColorConstants.primaryColor,
-                                    FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          buildDivider(),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/ic_reason.svg',
-                                height: getHeadingTextFontSIze(),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              addText('Order Id :', getSmallTextFontSIze() + 1,
-                                  ColorConstants.black, FontWeight.normal),
-                              Expanded(
-                                child: addText(
-                                    ' #546374',
-                                    getSmallTextFontSIze() + 1,
-                                    ColorConstants.primaryColor,
-                                    FontWeight.bold),
-                              ),
+                            GestureDetector(
+                              onTap: (){
+                                Get.lazyPut(() => TransactionRecordController());
+                                Get.dialog(const TransactionDetailDialog());
+                              },
+                              child: const Icon(Icons.remove_red_eye_outlined,color: ColorConstants.primaryColor,),
+                            ),
 
-                              GestureDetector(
+                          ],
+                        ),
+                        SizedBox(height: 2.h,),
+                        Row(
+                          children: [
+
+
+                            Expanded(
+
+                              child: GestureDetector(
                                 onTap: (){
-                                  Get.lazyPut(() => TransactionRecordController());
-                                  Get.dialog(const TransactionDetailDialog());
+                                  showCommentDialog();
                                 },
-                                child: const Icon(Icons.remove_red_eye_outlined,color: ColorConstants.primaryColor,),
-                              ),
-
-                            ],
-                          ),
-                          SizedBox(height: 2.h,),
-                          Row(
-                            children: [
-
-
-                              Expanded(
-
-                                child: GestureDetector(
-                                  onTap: (){
-                                    showCommentDialog();
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
-                                    decoration: getEditTextDecoration(),
-                                    child: addAlignedText('COMMENTS', getNormalTextFontSIze(), ColorConstants.lightTextColor, FontWeight.bold),
-                                  ),
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
+                                  decoration: getEditTextDecoration(),
+                                  child: addAlignedText('COMMENTS', getNormalTextFontSIze(), ColorConstants.lightTextColor, FontWeight.bold),
                                 ),
                               ),
+                            ),
 
-                              const SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
 
-                              Expanded(
+                            Expanded(
 
-                                child: GestureDetector(
-                                  onTap: (){
-                                    Get.dialog(buildConfirmationDialog());
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
-                                    decoration: BoxDecoration(
-                                        borderRadius: getBorderRadius(),
-                                        boxShadow: [getBoxShadow()],
-                                        border: Border.all(color: ColorConstants.primaryColor),
-                                        color: ColorConstants.primaryColorLight),
-                                    child: addAlignedText('APPROVE', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
-                                  ),
+                              child: GestureDetector(
+                                onTap: (){
+                                  Get.dialog(buildConfirmationDialog());
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
+                                  decoration: BoxDecoration(
+                                      borderRadius: getBorderRadius(),
+                                      boxShadow: [getBoxShadow()],
+                                      border: Border.all(color: ColorConstants.primaryColor),
+                                      color: ColorConstants.primaryColorLight),
+                                  child: addAlignedText('APPROVE', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
                                 ),
                               ),
+                            ),
 
-                              const SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
 
-                              Expanded(
+                            Expanded(
 
-                                child: GestureDetector(
-                                  onTap: (){
-                                    showCommentDialog();
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
-                                    decoration: getEditTextDecoration(),
-                                    child: addAlignedText('REJECT', getNormalTextFontSIze(), ColorConstants.lightTextColor, FontWeight.bold),
-                                  ),
+                              child: GestureDetector(
+                                onTap: (){
+                                  showCommentDialog();
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: getSmallestTextFontSIze()),
+                                  decoration: getEditTextDecoration(),
+                                  child: addAlignedText('REJECT', getNormalTextFontSIze(), ColorConstants.lightTextColor, FontWeight.bold),
                                 ),
                               ),
+                            ),
 
 
-                            ],
-                          )
+                          ],
+                        )
 
 
 
 
-                        ],
-                      ),
+                      ],
                     ),
                   );
                 },

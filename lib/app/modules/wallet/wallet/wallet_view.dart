@@ -6,7 +6,6 @@ import '../../../../common/app_header.dart';
 import '../../../../common/color_constants.dart';
 import '../../../../common/utils.dart';
 import '../../../controller/wallet_controller.dart';
-import '../sub_pages/events/event.dart';
 import '../sub_pages/purchase/purchase.dart';
 
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:star_shop/app/modules/assignments/worksheet_view.dart';
 import 'package:star_shop/common/delete_dialog.dart';
 
 import '../../../common/bordered_button.dart';
@@ -144,16 +145,15 @@ class AllComplaints extends GetView<ComplainController> {
                     buildDivider(),
                     buildLongReason('ic_complaints', 'Type', 'Complaints'),
                     buildDivider(),
-                    // buildLongReason(
-                    //     'ic_complaints', 'Complain For', 'Bus Driver'),
-                    // buildDivider(),
+                    buildLongReason(
+                        'ic_complaints', 'Complain On', 'Bus Driver'),
+                    buildDivider(),
                     buildLongReason('user2', 'Person', 'Ibrahim Khan'),
                     buildDivider(),
                     buildLongReason(
                         'ic_complaints', 'Complain Type', 'Bullying'),
                     buildDivider(),
-                    buildLongReason('ic_complaints', 'Comment',
-                        'behavior of the driver are not good with me please take some action or ask him to understand the concern.'),
+                    const BaseDetailData(icon: "assets/images/ic_complaints.svg", detailsLable: "Comment", detailsValue: "Behavior of the driver are not good with me please take some action or ask him to understand the concern."),
                     if (index != 0) buildDivider(),
                     if (index != 0)
                       buildLongReason('feedback', 'Feedback',
@@ -226,6 +226,21 @@ class AllComplaints extends GetView<ComplainController> {
                         // const SizedBox(width: 5,),
                         Flexible(child: GestureDetector(
                           onTap: () {
+                          },
+                          child: Container(
+                            height: 4.h,
+                            decoration:getPrimaryDecoration3(),
+                            child: Center(
+                                child: addText(
+                                    'ACCEPT',
+                                    getSmallTextFontSIze(),
+                                    ColorConstants.primaryColor,
+                                    FontWeight.normal)),
+                          ),
+                        )),
+                        const SizedBox(width: 5,),
+                        Flexible(child: GestureDetector(
+                          onTap: () {
                             showCommentDialog();
                           },
                           child: Container(
@@ -237,21 +252,6 @@ class AllComplaints extends GetView<ComplainController> {
                                     'COMMENTS',
                                     getSmallTextFontSIze(),
                                     ColorConstants.borderColor,
-                                    FontWeight.normal)),
-                          ),
-                        )),
-                        const SizedBox(width: 5,),
-                        Flexible(child: GestureDetector(
-                          onTap: () {
-                          },
-                          child: Container(
-                            height: 4.h,
-                            decoration:getPrimaryDecoration3(),
-                            child: Center(
-                                child: addText(
-                                    'ACCEPT',
-                                    getSmallTextFontSIze(),
-                                    ColorConstants.primaryColor,
                                     FontWeight.normal)),
                           ),
                         )),

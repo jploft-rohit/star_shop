@@ -116,82 +116,79 @@ class NewsView extends GetView<NewsController>{
   }
 
   Widget buildNewsItem(int index){
-    return FadeInRight(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: GestureDetector(
-        onTap: (){
-         Get.to(const NewsDetailScreen());
-        },
-        child: Container(
-          width: 100.w,
-          margin:  EdgeInsets.symmetric(vertical: 1.5.h,horizontal: 20),
-          padding: EdgeInsets.symmetric(vertical: 1.5.h),
-          decoration: BoxDecoration(
-              color: index.isEven ? const Color(0xffF5F5F5) : ColorConstants.primaryColorLight,
-              boxShadow: [getBoxShadow()],
-              borderRadius: getCurvedBorderRadius()),
-          child: Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  addText('Principal’s Honouring Ceremony', getSubheadingTextFontSIze(),  ColorConstants.amberBlack, FontWeight.normal),
-                  SizedBox(height: 2.h,),
-                  addText('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mauris arcu eleifend aliquam...', getSmallTextFontSIze(),  ColorConstants.amberBlack.withOpacity(0.6), FontWeight.normal),
-                  SizedBox(height: 2.h,),
-                  Row(
-                    children: [
-                      addText('School Admin', getSmallTextFontSIze(), ColorConstants.amberBlack.withOpacity(0.4), FontWeight.normal),
-                      const SizedBox(width: 25,),
-                      addText('15 mins ago', getSmallTextFontSIze(), ColorConstants.amberBlack.withOpacity(0.4), FontWeight.normal),
-                    ],
-                  ),
-                  SizedBox(height: 2.h,),
+    return GestureDetector(
+      onTap: (){
+       Get.to(const NewsDetailScreen());
+      },
+      child: Container(
+        width: 100.w,
+        margin:  EdgeInsets.symmetric(vertical: 1.5.h,horizontal: 20),
+        padding: EdgeInsets.symmetric(vertical: 1.5.h),
+        decoration: BoxDecoration(
+            color: index.isEven ? const Color(0xffF5F5F5) : ColorConstants.primaryColorLight,
+            boxShadow: [getBoxShadow()],
+            borderRadius: getCurvedBorderRadius()),
+        child: Padding(
+            padding:
+            const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                addText('Principal’s Honouring Ceremony', getSubheadingTextFontSIze(),  ColorConstants.amberBlack, FontWeight.normal),
+                SizedBox(height: 2.h,),
+                addText('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mauris arcu eleifend aliquam...', getSmallTextFontSIze(),  ColorConstants.amberBlack.withOpacity(0.6), FontWeight.normal),
+                SizedBox(height: 2.h,),
+                Row(
+                  children: [
+                    addText('School Admin', getSmallTextFontSIze(), ColorConstants.amberBlack.withOpacity(0.4), FontWeight.normal),
+                    const SizedBox(width: 25,),
+                    addText('15 mins ago', getSmallTextFontSIze(), ColorConstants.amberBlack.withOpacity(0.4), FontWeight.normal),
+                  ],
+                ),
+                SizedBox(height: 2.h,),
 
-                  if(index == 0)
-                    GestureDetector(
-                      onTap: (){},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 6.w),
-                            decoration: getEditTextDecoration(),
-                            child: Center(
-                              child: addText('ACKNOWLEDGE', getNormalTextFontSIze(),
-                                  ColorConstants.borderColor, FontWeight.w500),
-                            ),
-                          )
-                        ],
-                      ),
+                if(index == 0)
+                  GestureDetector(
+                    onTap: (){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 6.w),
+                          decoration: getEditTextDecoration(),
+                          child: Center(
+                            child: addText('ACKNOWLEDGE', getNormalTextFontSIze(),
+                                ColorConstants.borderColor, FontWeight.w500),
+                          ),
+                        )
+                      ],
                     ),
+                  ),
 
-                  if(index != 0)
-                    GestureDetector(
-                      onTap: (){},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 6.w),
-                            decoration: BoxDecoration(
-                                color: ColorConstants.primaryColorLight,
-                                boxShadow: [getDeepBoxShadow()],
-                                border: Border.all(color: ColorConstants.primaryColor, width: 1.5),
-                                borderRadius: getBorderRadius()),
-                            child: Center(
-                              child: addText('AGREED', getNormalTextFontSIze(),
-                                  ColorConstants.primaryColor, FontWeight.w500),
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                if(index != 0)
+                  GestureDetector(
+                    onTap: (){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 6.w),
+                          decoration: BoxDecoration(
+                              color: ColorConstants.primaryColorLight,
+                              boxShadow: [getDeepBoxShadow()],
+                              border: Border.all(color: ColorConstants.primaryColor, width: 1.5),
+                              borderRadius: getBorderRadius()),
+                          child: Center(
+                            child: addText('AGREED', getNormalTextFontSIze(),
+                                ColorConstants.primaryColor, FontWeight.w500),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
 
-                ],
-              )
-          ),
+              ],
+            )
         ),
       ),
     );

@@ -84,38 +84,29 @@ class TransportationBaseView extends GetView<TransportationController> {
               SizedBox(
                 height: 2.h,
               ),
-              FadeInRight(
-                duration: const Duration(milliseconds: 100),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.toNamed(Routes.notifyAuthorities);
-                  },
-                  child: buildItem('Notify Authorities'),
-                ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.notifyAuthorities);
+                },
+                child: buildItem('Notify Authorities'),
               ),
               SizedBox(
                 height: 1.h,
               ),
-              FadeInRight(
-                duration: const Duration(milliseconds: 100),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.toNamed(Routes.busLocationTransportation);
-                  },
-                  child: buildItem('Locations'),
-                ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.busLocationTransportation);
+                },
+                child: buildItem('Locations'),
               ),
               SizedBox(
                 height: 1.h,
               ),
-              FadeInRight(
-                duration: const Duration(milliseconds: 100),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.toNamed(Routes.busNotificationView);
-                  },
-                  child: buildItem('Bus Notifications'),
-                ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.busNotificationView);
+                },
+                child: buildItem('Bus Notifications'),
               ),
               SizedBox(
                 height: 2.h,

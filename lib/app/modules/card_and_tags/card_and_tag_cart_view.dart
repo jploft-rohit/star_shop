@@ -3,9 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:star_shop/app/controller/cardAndTag_cart_controller.dart';
-
 import '../../../common/app_header.dart';
-import '../../../common/bordered_button.dart';
 import '../../../common/circular_bordered_button.dart';
 import '../../../common/color_constants.dart';
 import '../../../common/success_dialog.dart';
@@ -21,7 +19,7 @@ class CardAndTagCartView extends GetView<CardAndTagCartController>{
       backgroundColor: ColorConstants.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(5.h),
-          child: AppHeader(
+          child: const AppHeader(
             showBackIcon: true,
             title: 'Cart',
           )),
@@ -103,7 +101,7 @@ class CardAndTagCartView extends GetView<CardAndTagCartController>{
                                 verticalDivider(),
                                 const Spacer(),
                                 SvgPicture.asset('assets/images/ic_delete.svg',color: Colors.red,),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                                 InkWell(child: addText('Remove', getNormalTextFontSIze(), Colors.red, FontWeight.normal),onTap: (){
                                   showremoveSuccessfulDialogue(context);
                                 },),
@@ -224,7 +222,7 @@ class CardAndTagCartView extends GetView<CardAndTagCartController>{
               ),
               ),
 
-              Obx(() => controller.friendsRadioValue.value == 'Home Delivery' ? Container() : SizedBox.shrink()),
+              Obx(() => controller.friendsRadioValue.value == 'Home Delivery' ? Container() : const SizedBox.shrink()),
 
               SizedBox(height: 3.h,),
 

@@ -82,43 +82,41 @@ class Staff extends GetView<PerformanceController>{
   }
 
   Widget buildRatingItem(int index,BuildContext context){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 1.h),
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-        decoration: BoxDecoration(
-            borderRadius: getCurvedBorderRadius(),
-            border: Border.all(color: ColorConstants.borderColor2)
-        ),
-        child: Column(
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 1.h),
+      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: getCurvedBorderRadius(),
+          border: Border.all(color: ColorConstants.borderColor2)
+      ),
+      child: Column(
 
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-                SizedBox(
-                  height: getLargeTextFontSIze(),
-                  child: ListView.builder(
-                    itemCount:2,
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Image.asset('assets/images/star.png',height: getLargeTextFontSIze(),color: ColorConstants.primaryColor.withOpacity(0.5),);
-                    },
-                  ),
+              SizedBox(
+                height: getLargeTextFontSIze(),
+                child: ListView.builder(
+                  itemCount:2,
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Image.asset('assets/images/star.png',height: getLargeTextFontSIze(),color: ColorConstants.primaryColor.withOpacity(0.5),);
+                  },
                 ),
-                const SizedBox(width: 10,),
-                Expanded(child: Container(
-                  constraints: const BoxConstraints(),
-                  padding: const EdgeInsets.all(5),
-                  decoration:BoxDecoration(
-                      borderRadius: getCurvedBorderRadius(),
-                      border: Border.all(color: ColorConstants.primaryColor),
-                      color: ColorConstants.primaryColorLight),
-                  child: addTooltipText('Performance is not good, he dont know how to talk and drive bus. Management is also very poor.')
+              ),
+              const SizedBox(width: 10,),
+              Expanded(child: Container(
+                constraints: const BoxConstraints(),
+                padding: const EdgeInsets.all(5),
+                decoration:BoxDecoration(
+                    borderRadius: getCurvedBorderRadius(),
+                    border: Border.all(color: ColorConstants.primaryColor),
+                    color: ColorConstants.primaryColorLight),
+                child: addTooltipText('Performance is not good, he dont know how to talk and drive bus. Management is also very poor.')
 
 
 
@@ -127,34 +125,33 @@ class Staff extends GetView<PerformanceController>{
 
 
 
-                  ,
-                )),
-                const SizedBox(width: 10,),
-                addText('Tue, July 19', getSmallestTextFontSIze(), ColorConstants.lightTextColor, FontWeight.normal)
+                ,
+              )),
+              const SizedBox(width: 10,),
+              addText('Tue, July 19', getSmallestTextFontSIze(), ColorConstants.lightTextColor, FontWeight.normal)
 
-              ],
-            ),
+            ],
+          ),
 
-            SizedBox(height: 2.h,),
+          SizedBox(height: 2.h,),
 
-            Row(
-              children: [
+          Row(
+            children: [
 
-                SvgPicture.asset('assets/images/ic_time.svg',color: ColorConstants.primaryColor,height: getHeadingTextFontSIze(),),
-                SizedBox(width: 2.w,),
-                addText('09:13pm', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
-                SizedBox(width: 10.w,),
-                SvgPicture.asset('assets/images/ic_teacher.svg',color: ColorConstants.primaryColor,height: getHeadingTextFontSIze(),),
-                SizedBox(width: 2.w,),
-                addText('Nora', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
-                SizedBox(width: 2.w,),
-                addText('(Head Master)', getSmallTextFontSIze(), ColorConstants.primaryColor, FontWeight.normal),
-              ],
-            )
+              SvgPicture.asset('assets/images/ic_time.svg',color: ColorConstants.primaryColor,height: getHeadingTextFontSIze(),),
+              SizedBox(width: 2.w,),
+              addText('09:13pm', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
+              SizedBox(width: 10.w,),
+              SvgPicture.asset('assets/icon/teacher_icon.svg',color: ColorConstants.primaryColor,height: 10),
+              SizedBox(width: 2.w,),
+              addText('Nora', getSmallTextFontSIze(), ColorConstants.black, FontWeight.normal),
+              SizedBox(width: 2.w,),
+              addText('(Head Master)', getSmallTextFontSIze(), ColorConstants.primaryColor, FontWeight.normal),
+            ],
+          )
 
 
-          ],
-        ),
+        ],
       ),
     );
   }

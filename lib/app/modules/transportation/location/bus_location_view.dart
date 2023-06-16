@@ -59,11 +59,11 @@ class BusLocationView extends GetView<BusLocationController>{
                       ),
                     ),
 
-                    // GestureDetector(
-                    //   onTap: (){
-                    //     showQrDialog();
-                    //   }, child: SvgPicture.asset('assets/images/qrcode.svg'),
-                    // )
+                    GestureDetector(
+                      onTap: (){
+                        showQrDialog();
+                      }, child: SvgPicture.asset('assets/images/qrcode.svg'),
+                    )
                   ],
                 ),
               ),

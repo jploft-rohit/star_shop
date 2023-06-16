@@ -503,14 +503,16 @@ class EventDetailsView extends GetView<EventsController>{
                               children: [
                                 Expanded(
                                   child: GestureDetector(
-                                    onTap:showApproveDialog,
+                                    onTap:(){
+                                      Get.dialog(const SuccessDialog(message: 'Your event approved!'));
+                                    },
                                     child: EdgyBorderedButton(width: 100.w, text: 'APPROVE')),
                                   ),
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: GestureDetector(
                                     onTap: (){
-                                      Get.dialog(const SuccessDialog(message: 'Your event approved!'));
+                                      showApproveDialog();
                                     },
                                     child: EdgyBorderedButton(width: 100.w, text: 'REJECT',isActive: false,),
                                   ),
@@ -548,9 +550,9 @@ class EventDetailsView extends GetView<EventsController>{
     double height = 1,
   }) {
     return BaseDetailData(
-      detailsLable: title,
+      prefixIcon: icon,
+      detailsLabel: title,
       detailsValue: value,
-      icon: icon ?? '',
     );
   }
 

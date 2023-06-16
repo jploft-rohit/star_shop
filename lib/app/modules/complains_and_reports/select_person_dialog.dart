@@ -35,11 +35,11 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
                 alignment: Alignment.topRight,
                 child: GestureDetector(
                   onTap: ()=> Get.back(),
-                  child: const Icon(Icons.close,color: ColorConstants.borderColor,),
+                  child: const Icon(Icons.close,color: ColorConstants.borderColor),
                 ),
               ),
               addText('Select Person', getSubheadingTextFontSIze(), ColorConstants.black, FontWeight.bold),
-              SizedBox(height: 2.h,),
+              SizedBox(height: 2.h),
               Container(
                 decoration: BoxDecoration(
                     borderRadius: getCustomBorderRadius(15),
@@ -48,9 +48,9 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
                 children: [
                   Row(
                     children: [
-                      const SizedBox(width: 20,),
-                      SvgPicture.asset('assets/images/ic_teacher.svg',height: getHeadingTextFontSIze(),),
-                      const SizedBox(width: 10,),
+                      const SizedBox(width: 20),
+                      SvgPicture.asset('assets/images/ic_teacher.svg',height: getHeadingTextFontSIze()),
+                      const SizedBox(width: 10),
                       Expanded(child: buildDropDown(controller.roleList, controller.selectedRole, 'Select Role'))
                     ],
                   ),
@@ -70,12 +70,12 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
                   )
                 ],
               ),
-              ),
+            ),
 
 
 
 
-              SizedBox(height: 2.h,),
+              SizedBox(height: 2.h),
               Expanded(child: ListView.builder(
                 itemCount: 16,
                 scrollDirection: Axis.vertical,
@@ -85,7 +85,6 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
                   return GestureDetector(
                     onTap: (){},
                     child:  Container(
-
                       margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 5),
                       decoration: BoxDecoration(
                           border: Border.all(color: ColorConstants.borderColor2,width: 1),
@@ -164,8 +163,7 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
               fontSize: getSmallTextFontSIze(),
               color: ColorConstants.gretTextColor),
         ),
-        items: list
-            .map((item) => DropdownMenuItem<String>(
+        items: list.map((item) => DropdownMenuItem<String>(
           value: item,
           child: Text(
             item,
@@ -173,15 +171,13 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
               fontSize: getNormalTextFontSIze(),
             ),
           ),
-        ))
-            .toList(),
+        )).toList(),
         value: selectedValue.value.isNotEmpty
             ? selectedValue.value
             : null,
         onChanged: (value) {
           selectedValue.value = value as String;
         },
-
         iconSize: 30,
         icon: const Icon(Icons.arrow_drop_down,color: ColorConstants.lightGreyColor,),
         buttonWidth: 100.w,
@@ -195,7 +191,7 @@ class SelectPersonDialog extends GetView<RaiseComplainController>{
         itemHeight: 40,
         itemPadding: const EdgeInsets.only(left: 14, right: 14),
         dropdownMaxHeight: 200,
-        dropdownWidth: 78.w,
+        dropdownWidth: 60.w,
         dropdownPadding: null,
         scrollbarRadius: const Radius.circular(40),
         scrollbarThickness: 6,

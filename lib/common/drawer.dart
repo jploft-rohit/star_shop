@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -210,10 +209,10 @@ class AppDrawer extends GetView<HomeController> {
                     childrenPadding: EdgeInsets.zero,
                     iconColor: ColorConstants.primaryColor,
                     collapsedIconColor: ColorConstants.primaryColor,
-                    title: addText('Assessment', getLargeTextFontSIze(),
+                    title: addText('Assignment', getLargeTextFontSIze(),
                         ColorConstants.primaryColor, FontWeight.normal),
                     backgroundColor: ColorConstants.primaryColorLight,
-                    children: <Widget>[
+                    children: [
                       GestureDetector(
                         onTap: () {
                           Get.to(() => const Awareness());
@@ -402,7 +401,8 @@ class AppDrawer extends GetView<HomeController> {
                         ],
                       ),
                     ),
-                  ));
+                  ),
+                  );
                 },
                 child: Row(
                   children: [

@@ -10,6 +10,12 @@ class FeedbackController extends GetxController with GetSingleTickerProviderStat
     'Dubai Public School',
     'AbuDhabi Public School',
   ];
+
+  final selectedRole = ''.obs;
+  final List<String> roleList = [
+    'Complain',
+    'Report'
+  ];
   late TabController controller;
   final List<String> dates = ['July 2', 'July 3', 'July 4'];
   final List<String> heading = [

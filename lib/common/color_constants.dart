@@ -18,6 +18,7 @@ class ColorConstants {
   static const green = Color(0xFF00A624);
   static const lightGreen = Color(0xFFD1FFD1);
   static const blue = Color(0xFF92AADA);
+  static const Color dividerColor = Color(0xffFCEFC0);
   static const Color txtFiledBorderColor = Color(0xffBECADA);
   static const Color secondaryColor = Color(0xFFF8F4E9);
 }

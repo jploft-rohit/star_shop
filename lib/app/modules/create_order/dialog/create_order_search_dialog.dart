@@ -95,7 +95,7 @@ class CreateOrderSearchDialog extends GetView<CreateOrderController>{
 
                         buildInfoItems('Name', 'Yusuf'),
                         buildInfoItems('Designation', 'Teacher Admin'),
-                        buildInfoItems('Id', '#87887'),
+                        buildInfoItems('ID', '#87887'),
 
                         ],
                       ),

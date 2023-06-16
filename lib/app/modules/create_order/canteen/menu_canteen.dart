@@ -43,80 +43,76 @@ class CanteenMenuView extends GetView<CanteenMenuController>{
                     mainAxisExtent: 30.h,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 1.h),
-                itemBuilder: (context, index) => FadeInUp(
-                  duration: Duration(milliseconds: 200*(index+1)),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    margin: index.isEven
+                        ?  EdgeInsets.only(left: 20,bottom: 1.h)
+                        :  EdgeInsets.only(right: 20,bottom: 1.h),
+                    decoration: BoxDecoration(
+                        boxShadow: [getDeepBoxShadow()],
+                        color: ColorConstants.white,
+                        borderRadius: getCurvedBorderRadius()),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                          borderRadius: getCurvedBorderRadius(),
+                        //   child: Image.network(
+                        //     'https://picsum.photos/id/${(index + 20)}/200/300',
+                        //     height: 20.h,
+                        //     width: double.infinity,
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // ),
+                            child: Image.asset('assets/images/im_canteen_0${index+1}.png',
+                              width: double.infinity,height: 20.h,fit: BoxFit.cover,)),
+                        Padding(
+                          padding:  EdgeInsets.all(1.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              addText('NFC Tags', getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
+                              SizedBox(height: 1.h,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  addText('5 AED', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 3),
+                                    decoration: BoxDecoration(
+                                        borderRadius: getCurvedBorderRadius(),
+                                        border: Border.all(color: ColorConstants.primaryColor),
+                                        boxShadow: [getDeepBoxShadow()],
+                                        color: ColorConstants.primaryColorLight),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const SizedBox(width: 10,),
+                                        GestureDetector(
+                                          onTap: (){},
+                                          child: addText('-', getNormalTextFontSIze()+8, ColorConstants.primaryColor, FontWeight.bold),
+                                        ),
+                                        const SizedBox(width: 10,),
+                                        addText('2', getSmallTextFontSIze()+6, ColorConstants.primaryColor, FontWeight.bold),
+                                        const SizedBox(width: 10,),
+                                        GestureDetector(
+                                          onTap: (){},
+                                          child: addText('+', getNormalTextFontSIze()+8, ColorConstants.primaryColor, FontWeight.bold),
+                                        ),
+                                        const SizedBox(width: 10,),
 
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      margin: index.isEven
-                          ?  EdgeInsets.only(left: 20,bottom: 1.h)
-                          :  EdgeInsets.only(right: 20,bottom: 1.h),
-                      decoration: BoxDecoration(
-                          boxShadow: [getDeepBoxShadow()],
-                          color: ColorConstants.white,
-                          borderRadius: getCurvedBorderRadius()),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: getCurvedBorderRadius(),
-                          //   child: Image.network(
-                          //     'https://picsum.photos/id/${(index + 20)}/200/300',
-                          //     height: 20.h,
-                          //     width: double.infinity,
-                          //     fit: BoxFit.cover,
-                          //   ),
-                          // ),
-                              child: Image.asset('assets/images/im_canteen_0${index+1}.png',
-                                width: double.infinity,height: 20.h,fit: BoxFit.cover,)),
-                          Padding(
-                            padding:  EdgeInsets.all(1.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                addText('NFC Tags', getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
-                                SizedBox(height: 1.h,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    addText('5 AED', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 3),
-                                      decoration: BoxDecoration(
-                                          borderRadius: getCurvedBorderRadius(),
-                                          border: Border.all(color: ColorConstants.primaryColor),
-                                          boxShadow: [getDeepBoxShadow()],
-                                          color: ColorConstants.primaryColorLight),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          const SizedBox(width: 10,),
-                                          GestureDetector(
-                                            onTap: (){},
-                                            child: addText('-', getNormalTextFontSIze()+8, ColorConstants.primaryColor, FontWeight.bold),
-                                          ),
-                                          const SizedBox(width: 10,),
-                                          addText('2', getSmallTextFontSIze()+6, ColorConstants.primaryColor, FontWeight.bold),
-                                          const SizedBox(width: 10,),
-                                          GestureDetector(
-                                            onTap: (){},
-                                            child: addText('+', getNormalTextFontSIze()+8, ColorConstants.primaryColor, FontWeight.bold),
-                                          ),
-                                          const SizedBox(width: 10,),
-
-                                        ],
-                                      ),
+                                      ],
                                     ),
+                                  ),
 
-                                  ],),
+                                ],),
 
 
-                              ],
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

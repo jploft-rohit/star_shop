@@ -145,48 +145,45 @@ class StationaryOrderDetailView extends GetView<OrderStationaryController>{
   }
 
   Widget buildItem(int index,BuildContext context){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        width: 100.w,
-        padding: const  EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 10),
-        decoration: BoxDecoration(
-            borderRadius: getCurvedBorderRadius(),
-            boxShadow: [getDeepBoxShadow()],
-            color: ColorConstants.white
-        ),
-        child: Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ClipRRect(
-                    borderRadius: getCurvedBorderRadius(),
-                  //  child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 20.w,height: 20.w,fit: BoxFit.cover,)),
-                    child: Image.asset('assets/images/im_stationary_0${index+1}.png',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
-                SizedBox(width: 5.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buildInfoItems('Name', 'Notebook'),
-                    buildInfoItems('Price', '15 AED'),
-                    Row(
-                      children: [
-                        buildInfoItems('Qty', '2'),
-                        const SizedBox(width: 5,),
-                        verticalDivider(),
-                        const SizedBox(width: 5,),
-                        buildInfoItems('Total', '30 AED')
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
+    return Container(
+      width: 100.w,
+      padding: const  EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: getCurvedBorderRadius(),
+          boxShadow: [getDeepBoxShadow()],
+          color: ColorConstants.white
+      ),
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ClipRRect(
+                  borderRadius: getCurvedBorderRadius(),
+                //  child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 20.w,height: 20.w,fit: BoxFit.cover,)),
+                  child: Image.asset('assets/images/im_stationary_0${index+1}.png',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+              SizedBox(width: 5.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildInfoItems('Name', 'Notebook'),
+                  buildInfoItems('Price', '15 AED'),
+                  Row(
+                    children: [
+                      buildInfoItems('Qty', '2'),
+                      const SizedBox(width: 5,),
+                      verticalDivider(),
+                      const SizedBox(width: 5,),
+                      buildInfoItems('Total', '30 AED')
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }

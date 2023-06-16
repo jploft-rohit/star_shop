@@ -56,7 +56,7 @@ class AccountActivationView extends GetView<AuthController>{
                         SizedBox(height: 1.h,),
                         buildInputField('OTP for\nverification:', controller.otpController!),
                         SizedBox(height: 2.h,),
-                        buildInputField('Employee Id', controller.employeeIdController!),
+                        buildInputField('Employee ID', controller.employeeIdController!),
                         SizedBox(height: 4.h,),
                         GestureDetector(
                           onTap: (){

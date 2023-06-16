@@ -129,7 +129,7 @@ class CanteenOrderSummaryReceiptDialog extends GetView<CanteenMenuController> {
                 children: [
                   Expanded(child: Column(
                     children: [
-                      buildInfoItems('Order Id', '#42385364'),
+                      buildInfoItems('Order ID', '#42385364'),
                       buildInfoItems('Order Total', '130 AED'),
                       buildInfoItems('Total Items', '3'),
                       Padding(

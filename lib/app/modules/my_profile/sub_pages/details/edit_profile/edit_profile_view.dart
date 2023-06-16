@@ -3,9 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:star_shop/app/routes/app_routes.dart';
-import 'package:star_shop/common/circular_bordered_button.dart';
 import 'package:star_shop/common/direction_view.dart';
-
 import '../../../../../../common/bordered_button.dart';
 import '../../../../../../common/color_constants.dart';
 import '../../../../../../common/utils.dart';
@@ -183,10 +181,36 @@ class EditProfileView extends GetView<EditProfileController> {
                         ),
                       ],
                     ),
-
-
-
-                    buildEditText('DOB', controller.dobController),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        addText('DOB', getNormalTextFontSIze(), ColorConstants.black,
+                            FontWeight.normal),
+                        Stack(
+                          children: [
+                            addPrimaryColorEditText(controller.dobController!, ''),
+                            Positioned(
+                                right: 10,
+                                bottom: 15,
+                                child: GestureDetector(
+                                  onTap: (){
+                                    showPicker(context);
+                                  },
+                                  child: SvgPicture.asset('assets/images/ic_calendar.svg'),
+                                ),
+                            )
+                          ],
+                        ),
+                        const Divider(
+                          color: ColorConstants.borderColor2,
+                          height: 0,
+                          thickness: 1.5,
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                      ],
+                    ),
 
 
                     buildEditText('Email', controller.emailController),

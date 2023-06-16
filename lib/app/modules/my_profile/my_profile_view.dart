@@ -151,18 +151,24 @@ class MyProfileView extends GetView<MyProfileController>{
               child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 GestureDetector(
-                   onTap: (){
-                     Get.to(const PrintQrDialog());
-                   },
-                   child: CircularBorderedButton(width: 35.w, text: 'PRINT QR',),
+                 Expanded(
+                   flex: 4,
+                   child: GestureDetector(
+                     onTap: (){
+                       Get.to(const PrintQrDialog());
+                     },
+                     child: CircularBorderedButton(width: 35.w, text: 'PRINT QR',),
+                   ),
                  ),
                  const SizedBox(width: 5,),
-                 GestureDetector(
-                   onTap: (){
-                     showProgramNFCDialogue(context);
-                   },
-                   child: CircularBorderedButton(width: 45.w, text: 'PROGRAMME NFC',),
+                 Expanded(
+                   flex: 6,
+                   child: GestureDetector(
+                     onTap: (){
+                       showProgramNFCDialogue(context);
+                     },
+                     child: CircularBorderedButton(width: 45.w, text: 'PROGRAMME NFC',),
+                   ),
                  )
                ],
            ),

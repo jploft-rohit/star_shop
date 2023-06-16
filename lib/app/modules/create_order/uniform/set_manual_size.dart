@@ -95,55 +95,35 @@ class SetManualSizeView extends GetView<MenuUniformController>{
                       child: Column(
                         children: [
 
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 200),
-                              child: buildEditText('Head', controller.headSizeController!)),
+                          buildEditText('Head', controller.headSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 400),
-                              child: buildEditText('Shoulder', controller.shoulderSizeController!)),
+                          buildEditText('Shoulder', controller.shoulderSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 600),
-                              child: buildEditText('Sleeve', controller.sleeveSizeController!)),
+                          buildEditText('Sleeve', controller.sleeveSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 800),
-                              child: buildEditText('Biceps', controller.bicepsSizeController!)),
+                          buildEditText('Biceps', controller.bicepsSizeController!),
 
                         ],
                       )),
                   const SizedBox(width: 15,),
                   Flexible(
                       flex: 1,
-                      child: FadeIn(
-                          duration: const Duration(milliseconds: 1000),
-                          child: SvgPicture.asset('assets/images/dummy.svg',height: 50.h,))),
+                      child: SvgPicture.asset('assets/images/dummy.svg',height: 50.h,)),
                   const SizedBox(width: 15,),
                   Flexible(
                       flex: 1,
                       child: Column(
                         children: [
 
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 200),
-                              child: buildEditText('Neck', controller.neckSizeController!)),
+                          buildEditText('Neck', controller.neckSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 400),
-                              child: buildEditText('Chest', controller.chestSizeController!)),
+                          buildEditText('Chest', controller.chestSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 600),
-                              child: buildEditText('Wrist', controller.wristSizeController!)),
+                          buildEditText('Wrist', controller.wristSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 800),
-                              child: buildEditText('Short', controller.shortSizeController!)),
+                          buildEditText('Short', controller.shortSizeController!),
                           SizedBox(height: 2.h,),
-                          FadeInUp(
-                              duration: const Duration(milliseconds: 1000),
-                              child: buildEditText('Shoe', controller.shoeSizeController!)),
+                          buildEditText('Shoe', controller.shoeSizeController!),
 
                         ],
                       )),
@@ -151,31 +131,20 @@ class SetManualSizeView extends GetView<MenuUniformController>{
                 ],
               ),
               // SizedBox(height: 0.h,),
-              FadeInUp(
-                  duration: const Duration(milliseconds: 1000),
-                  child: buildEditText('Best Matching for T-shirt , Shirt & Jacket Size:', controller.bestMatchingShirtController!)),
+              buildEditText('Best Matching for T-shirt , Shirt & Jacket Size:', controller.bestMatchingShirtController!),
               SizedBox(height: 2.h,),
-              FadeInUp(
-                  duration: const Duration(milliseconds: 1100),
-                  child: buildEditText('Best Matching for Pant , Short & Skirt Size:', controller.bestMatchingPantSizeController!)),
+              buildEditText('Best Matching for Pant , Short & Skirt Size:', controller.bestMatchingPantSizeController!),
               SizedBox(height: 2.h,),
-              FadeInUp(
-                  duration: const Duration(milliseconds: 1200),
-                  child: buildEditText('Best Matching for Hat Size :', controller.bestMatchingHatSizeController!)),
+              buildEditText('Best Matching for Hat Size :', controller.bestMatchingHatSizeController!),
               SizedBox(height: 2.h,),
-              FadeInUp(
-                  duration: const Duration(milliseconds: 1300),
-                  child: buildEditText('Best Matching for Wristband Size :', controller.bestMatchingWristBandSizeController!)),
+              buildEditText('Best Matching for Wristband Size :', controller.bestMatchingWristBandSizeController!),
               SizedBox(height: 2.h,),
-              FadeInUp(
-                duration: const Duration(milliseconds: 1400),
-                child: GestureDetector(
-                  onTap: (){},
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 12),
-                    decoration: getPrimaryDecoration2(),
-                    child: addText('Save', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
-                  ),
+              GestureDetector(
+                onTap: (){},
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 12),
+                  decoration: getPrimaryDecoration2(),
+                  child: addText('Save', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.bold),
                 ),
               ),
               SizedBox(height: 4.h,),

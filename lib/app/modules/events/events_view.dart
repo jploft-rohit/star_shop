@@ -162,7 +162,7 @@ class EventsView extends GetView<EventsController>{
                       controller.currentTab.value == 'Concluded'
                           ? addText(
                         index == 0 || index == 2
-                            ? 'Accepted'
+                            ? 'Completed'
                             : 'Rejected',
                         14,
                         index == 0 || index == 2

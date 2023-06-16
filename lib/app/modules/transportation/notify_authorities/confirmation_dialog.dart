@@ -70,7 +70,7 @@ class AuthorityConfirmationDialog extends GetView<NotifyAuthoritiesController>{
 
               GestureDetector(
                 onTap: () {},
-                child: CircularBorderedButton(width: 40.w, text: 'SUBMIT'),
+                child: CircularBorderedButton(width: 40.w, text: 'NOTIFY'),
               ),
             ],
           ),

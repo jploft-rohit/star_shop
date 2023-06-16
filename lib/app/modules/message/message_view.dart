@@ -17,7 +17,7 @@ class MessageView extends GetView<MessageController>{
       backgroundColor: ColorConstants.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(7.h),
-          child: AppHeader(
+          child: const AppHeader(
             showBackIcon: true,
             title: 'Chat',
           )),
@@ -37,9 +37,9 @@ class MessageView extends GetView<MessageController>{
              children: [
                Expanded(child: Column(
                  children: [
-                   buildInfoItems('Order Id', '#3635456'),
+                   buildInfoItems('Order ID', '#3635456'),
                    buildInfoItems('Order Total', '42 AED'),
-                   buildInfoItems('Items', '4'),
+                   buildInfoItems('Quantity', '4'),
                    buildInfoItems('Order Date', '10/08/2022'),
                  ],
                )),
@@ -57,9 +57,9 @@ class MessageView extends GetView<MessageController>{
           Expanded(child: buildChatList()),
           Row(
            children: [
-
              Container(
                width: 80.w,
+               alignment: Alignment.center,
                margin: const EdgeInsets.symmetric(horizontal: 10),
                padding: const EdgeInsets.symmetric(
                    horizontal: 15, vertical: 2),
@@ -85,15 +85,27 @@ class MessageView extends GetView<MessageController>{
                          style: TextStyle(fontSize: getNormalTextFontSIze()),
                          decoration: InputDecoration(
                              hintText: 'Message'.tr,
+                             prefixIcon: const Icon(
+                               Icons.emoji_emotions_outlined,
+                               color: Colors.grey,
+                               size: 20,
+                             ),
+                             prefixIconConstraints: const BoxConstraints(maxHeight: 10,maxWidth: 10),
+                             suffixIcon: Row(
+                               mainAxisSize: MainAxisSize.min,
+                               children: [
+                                 SvgPicture.asset("assets/icon/ic_attach.svg"),
+                                 const SizedBox(width: 8),
+                                 SvgPicture.asset("assets/icon/ic_mic.svg"),
+                               ],
+                             ),
                              hintStyle: TextStyle(
                                  fontSize: getNormalTextFontSIze(),
-                                 color: ColorConstants.gretTextColor
-                                     .withOpacity(0.8)),
-                             contentPadding:
-                             const EdgeInsets.fromLTRB(0, 0, 10, 0),
-                             // contentPadding: EdgeInsets.zero,
+                                 color: ColorConstants.gretTextColor.withOpacity(0.8)),
+                             contentPadding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                              border: InputBorder.none),
-                       )),
+                       ),
+                   ),
 
                  ],
                ),

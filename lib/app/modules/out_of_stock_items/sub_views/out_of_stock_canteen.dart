@@ -110,96 +110,90 @@ class OutOfStockCanteenView extends GetView<OutOfStockItemController>{
   }
 
   Widget buildListItem(int index,BuildContext context,List<String> list, int type){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        padding: const EdgeInsets.all(5),
-        margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-        decoration: BoxDecoration(
-            borderRadius: getCurvedBorderRadius(),
-            boxShadow: [getBoxShadow()],
-            color: ColorConstants.white
-        ),
-        child: Row(
-          children: [
+    return Container(
+      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: getCurvedBorderRadius(),
+          boxShadow: [getBoxShadow()],
+          color: ColorConstants.white
+      ),
+      child: Row(
+        children: [
 
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: ColorConstants.primaryColor),
-                borderRadius: getCurvedBorderRadius()
-              ),
-              child: ClipRRect(
-                  borderRadius: getCurvedBorderRadius(),
-                 // child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
-                  child: Image.asset(
-                    type == 0?'assets/images/im_canteen_0${index+1}.png':
-                        type ==1?'assets/images/im_stationary_0${index+1}.png':
-                            type ==2?'assets/images/im_uniform_0${index+1}.png':'assets/images/im_stars_store_0${index+1}.png'
-                    ,width: 25.w,height: 25.w,fit: BoxFit.cover,)),
-              ),
-            const SizedBox(width: 10,),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  addText(list[index], getNormalTextFontSIze(), ColorConstants.black, FontWeight.bold),
-                  SizedBox(height: 1.h,),
-                  buildInfoItems('Request', '13'),
-                  buildInfoItems('Price', '15 AED'),
-                ],
-              ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorConstants.primaryColor),
+              borderRadius: getCurvedBorderRadius()
             ),
+            child: ClipRRect(
+                borderRadius: getCurvedBorderRadius(),
+               // child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+                child: Image.asset(
+                  type == 0?'assets/images/im_canteen_0${index+1}.png':
+                      type ==1?'assets/images/im_stationary_0${index+1}.png':
+                          type ==2?'assets/images/im_uniform_0${index+1}.png':'assets/images/im_stars_store_0${index+1}.png'
+                  ,width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+            ),
+          const SizedBox(width: 10,),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                addText(list[index], getNormalTextFontSIze(), ColorConstants.black, FontWeight.bold),
+                SizedBox(height: 1.h,),
+                buildInfoItems('Request', '13'),
+                buildInfoItems('Price', '15 AED'),
+              ],
+            ),
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }
 
   Widget buildAboutListItem(int index,BuildContext context,List<String> list ,int type){
-    return FadeInUp(
-      duration: Duration(milliseconds: 200*(index+1)),
-      child: Container(
-        padding: const EdgeInsets.all(5),
-        margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-        decoration: BoxDecoration(
-            borderRadius: getCurvedBorderRadius(),
-            boxShadow: [getBoxShadow()],
-            color: ColorConstants.white
-        ),
-        child: Row(
-          children: [
+    return Container(
+      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: getCurvedBorderRadius(),
+          boxShadow: [getBoxShadow()],
+          color: ColorConstants.white
+      ),
+      child: Row(
+        children: [
 
-            Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color: ColorConstants.primaryColor),
-                  borderRadius: getCurvedBorderRadius()
-              ),
-              child: ClipRRect(
-                  borderRadius: getCurvedBorderRadius(),
-                 // child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
-                  child: Image.asset(
-                    type == 0?'assets/images/im_canteen_0${index+1}.png':
-                    type ==1?'assets/images/im_stationary_0${index+1}.png':
-                    type ==2?'assets/images/im_uniform_0${index+1}.png':'assets/images/im_stars_store_0${index+1}.png'
-                    ,width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+          Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: ColorConstants.primaryColor),
+                borderRadius: getCurvedBorderRadius()
             ),
-            const SizedBox(width: 10,),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  addText(list[index], getNormalTextFontSIze(), ColorConstants.black, FontWeight.bold),
-                  SizedBox(height: 1.h,),
-                  buildInfoItems('Requested Qty', '13'),
-                  buildInfoItems('Available Qty', '16'),
-                  buildInfoItems('Price', '15 AED'),
-                ],
-              ),
+            child: ClipRRect(
+                borderRadius: getCurvedBorderRadius(),
+               // child: Image.network('https://picsum.photos/id/${Random().nextInt(100)}/200/300',width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+                child: Image.asset(
+                  type == 0?'assets/images/im_canteen_0${index+1}.png':
+                  type ==1?'assets/images/im_stationary_0${index+1}.png':
+                  type ==2?'assets/images/im_uniform_0${index+1}.png':'assets/images/im_stars_store_0${index+1}.png'
+                  ,width: 25.w,height: 25.w,fit: BoxFit.cover,)),
+          ),
+          const SizedBox(width: 10,),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                addText(list[index], getNormalTextFontSIze(), ColorConstants.black, FontWeight.bold),
+                SizedBox(height: 1.h,),
+                buildInfoItems('Requested Qty', '13'),
+                buildInfoItems('Available Qty', '16'),
+                buildInfoItems('Price', '15 AED'),
+              ],
             ),
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }

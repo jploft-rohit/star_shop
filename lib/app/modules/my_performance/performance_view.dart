@@ -27,42 +27,41 @@ class PerformanceView extends GetView<PerformanceController>{
           child: const AppHeader(
             showBackIcon: true,
             title: 'Performance',
-          )),
+          ),
+      ),
       body: Column(
         children: [
 
-          FadeInUp(
-            child: Container(
-              width: 100.w,
-              margin: EdgeInsets.symmetric(horizontal: 10.w,vertical: 3.h),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: ColorConstants.primaryColorLight,
-                borderRadius: getCustomBorderRadius(35),
-                boxShadow: [getLightBoxShadow()]
-              ), child: Column(
-              children: [
-                addText('Average Rating', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.normal),
-                SizedBox(height: 1.h,),
-                addText('4.3', getLargeTextFontSIze(), ColorConstants.black, FontWeight.bold),
-                SizedBox(height: 1.h,),
-                RatingBar.builder(
-                    initialRating: 3,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    ignoreGestures: true,
-                    itemSize: getLargeTextFontSIze()*1.7,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
-                    itemBuilder: (context, _) => Image.asset('assets/images/star.png'),
-                    onRatingUpdate: (rating) {
-                      Get.log(rating.toString());
-                    },
-                  )
-                ],
-            ),
-            ),
+          Container(
+            width: 100.w,
+            margin: EdgeInsets.symmetric(horizontal: 10.w,vertical: 3.h),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: ColorConstants.primaryColorLight,
+              borderRadius: getCustomBorderRadius(35),
+              boxShadow: [getLightBoxShadow()]
+            ), child: Column(
+            children: [
+              addText('Average Rating', getNormalTextFontSIze(), ColorConstants.primaryColor, FontWeight.normal),
+              SizedBox(height: 1.h),
+              addText('4.3', getLargeTextFontSIze(), ColorConstants.black, FontWeight.bold),
+              SizedBox(height: 1.h),
+              RatingBar.builder(
+                  initialRating: 3,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  ignoreGestures: true,
+                  itemSize: getLargeTextFontSIze()*1.7,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
+                  itemBuilder: (context, _) => Image.asset('assets/images/star.png'),
+                  onRatingUpdate: (rating) {
+                    Get.log(rating.toString());
+                  },
+                )
+              ],
+          ),
           ),
 
           Container(

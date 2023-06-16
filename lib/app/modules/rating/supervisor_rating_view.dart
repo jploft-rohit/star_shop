@@ -116,7 +116,7 @@ class SupervisorRatingView extends GetView<RatingController>{
             SizedBox(height: 2.h,),
             GestureDetector(
               onTap: (){},
-              child: CircularBorderedButton(width: 30.w, text: 'SEND'),
+              child: CircularBorderedButton(width: 30.w, text: 'SUBMIT'),
             )
           ],
         ),

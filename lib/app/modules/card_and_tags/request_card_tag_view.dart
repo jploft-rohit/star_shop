@@ -39,127 +39,124 @@ class RequestCardAndTagsView extends GetView<CardAndTagsController> {
                       mainAxisExtent: 25.h,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
-                  itemBuilder: (context, index) => FadeInUp(
-                        duration: Duration(milliseconds: 200 * (index + 1)),
-                        child: Container(
-                            margin: const EdgeInsets.all(2),
-                            decoration: BoxDecoration(
+                  itemBuilder: (context, index) => Container(
+                      margin: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                          borderRadius: getCurvedBorderRadius(),
+                          boxShadow: kElevationToShadow[2],
+                          color: ColorConstants.white),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              decoration: BoxDecoration(
                                 borderRadius: getCurvedBorderRadius(),
-                                boxShadow: kElevationToShadow[2],
-                                color: ColorConstants.white),
+                              ),
+                              width: double.infinity,
+                              height: 15.h,
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20)),
+                                child: Image.asset(
+                                  controller.imageList[index],
+                                  height: 15.h,
+                                  fit: BoxFit.cover,
+                                ),
+                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: getCurvedBorderRadius(),
-                                    ),
-                                    width: double.infinity,
-                                    height: 15.h,
-                                    child: ClipRRect(
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          topRight: Radius.circular(20)),
-                                      child: Image.asset(
-                                        controller.imageList[index],
-                                        height: 15.h,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    )),
-                                Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      addText(
-                                          'NFC Tags',
-                                          getNormalTextFontSIze() + 2,
-                                          ColorConstants.black,
-                                          FontWeight.w400),
-                                      SizedBox(
-                                        height: 1.h,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                addText(
+                                    'NFC Tags',
+                                    getNormalTextFontSIze() + 2,
+                                    ColorConstants.black,
+                                    FontWeight.w400),
+                                SizedBox(
+                                  height: 1.h,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    addText(
+                                        '10 AED',
+                                        getNormalTextFontSIze(),
+                                        ColorConstants.primaryColor,
+                                        FontWeight.bold),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 2),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              getCurvedBorderRadius(),
+                                          border: Border.all(
+                                              color: ColorConstants
+                                                  .primaryColor),
+                                          boxShadow: [getDeepBoxShadow()],
+                                          color: ColorConstants
+                                              .primaryColorLight),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              // if(controller.quantityList[index] > 1){
+                                              //   controller.quantityList[index] = controller.quantityList[index] - 1;
+                                              //   controller.quantityList.assignAll(controller.quantityList);
+                                              // }
+                                            },
+                                            child: addText(
+                                                '-',
+                                                getNormalTextFontSIze(),
+                                                ColorConstants
+                                                    .primaryColor,
+                                                FontWeight.bold),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
                                           addText(
-                                              '10 AED',
+                                              controller
+                                                  .quantityList[index]
+                                                  .toString(),
                                               getNormalTextFontSIze(),
                                               ColorConstants.primaryColor,
                                               FontWeight.bold),
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 2),
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    getCurvedBorderRadius(),
-                                                border: Border.all(
-                                                    color: ColorConstants
-                                                        .primaryColor),
-                                                boxShadow: [getDeepBoxShadow()],
-                                                color: ColorConstants
-                                                    .primaryColorLight),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    // if(controller.quantityList[index] > 1){
-                                                    //   controller.quantityList[index] = controller.quantityList[index] - 1;
-                                                    //   controller.quantityList.assignAll(controller.quantityList);
-                                                    // }
-                                                  },
-                                                  child: addText(
-                                                      '-',
-                                                      getNormalTextFontSIze(),
-                                                      ColorConstants
-                                                          .primaryColor,
-                                                      FontWeight.bold),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                addText(
-                                                    controller
-                                                        .quantityList[index]
-                                                        .toString(),
-                                                    getNormalTextFontSIze(),
-                                                    ColorConstants.primaryColor,
-                                                    FontWeight.bold),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    // controller.quantityList[index] = controller.quantityList[index] + 1;
-                                                    // controller.quantityList.assignAll(controller.quantityList);
-                                                  },
-                                                  child: addText(
-                                                      '+',
-                                                      getNormalTextFontSIze(),
-                                                      ColorConstants
-                                                          .primaryColor,
-                                                      FontWeight.bold),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                              ],
-                                            ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              // controller.quantityList[index] = controller.quantityList[index] + 1;
+                                              // controller.quantityList.assignAll(controller.quantityList);
+                                            },
+                                            child: addText(
+                                                '+',
+                                                getNormalTextFontSIze(),
+                                                ColorConstants
+                                                    .primaryColor,
+                                                FontWeight.bold),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
                                           ),
                                         ],
                                       ),
-                                    ],
-                                  ),
-                                )
+                                    ),
+                                  ],
+                                ),
                               ],
-                            )),
-                      )),
+                            ),
+                          )
+                        ],
+                      ))),
             ),
             SizedBox(height: 2.h),
             Center(

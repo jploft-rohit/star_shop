@@ -29,10 +29,9 @@ class _AppHeaderState extends State<AppHeader> {
         leading: widget.showBackIcon
             ? Center(
               child: IconButton(
-          icon:  Icon(Icons.arrow_back_ios, color: Colors.black,size: getLargeTextFontSIze() * 1,),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-            )
+              icon:  Icon(Icons.arrow_back_ios, color: Colors.black,size: getLargeTextFontSIze() * 1,),
+              onPressed: () => Navigator.of(context).pop(),
+             ))
             : const SizedBox.shrink(),
         actions: [
           GestureDetector(
@@ -42,9 +41,7 @@ class _AppHeaderState extends State<AppHeader> {
             child: SvgPicture.asset('assets/images/notification.svg',
                 height: getLargeTextFontSIze() * 1.2),
           ),
-          const SizedBox(
-            width: 15,
-          )
+          const SizedBox(width: 15)
         ]);
   }
 }

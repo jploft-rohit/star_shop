@@ -147,6 +147,21 @@ class AllFeedbacksView extends GetView<FeedbackController>{
                         // const SizedBox(width: 5,),
                         Flexible(child: GestureDetector(
                           onTap: () {
+                          },
+                          child: Container(
+                            height: 4.h,
+                            decoration:getPrimaryDecoration3(),
+                            child: Center(
+                                child: addText(
+                                    'ACCEPT',
+                                    getSmallTextFontSIze(),
+                                    ColorConstants.primaryColor,
+                                    FontWeight.normal)),
+                          ),
+                        )),
+                        const SizedBox(width: 5,),
+                        Flexible(child: GestureDetector(
+                          onTap: () {
                             showCommentDialog();
                           },
                           child: Container(
@@ -158,21 +173,6 @@ class AllFeedbacksView extends GetView<FeedbackController>{
                                     'COMMENTS',
                                     getSmallTextFontSIze(),
                                     ColorConstants.borderColor,
-                                    FontWeight.normal)),
-                          ),
-                        )),
-                        const SizedBox(width: 5,),
-                        Flexible(child: GestureDetector(
-                          onTap: () {
-                          },
-                          child: Container(
-                            height: 4.h,
-                            decoration:getPrimaryDecoration3(),
-                            child: Center(
-                                child: addText(
-                                    'ACCEPT',
-                                    getSmallTextFontSIze(),
-                                    ColorConstants.primaryColor,
                                     FontWeight.normal)),
                           ),
                         )),
@@ -241,18 +241,15 @@ class AllFeedbacksView extends GetView<FeedbackController>{
             text: TextSpan(
               children: [
                 TextSpan(
-                    text: "$title :".tr,
+                    text: "$title :",
                     style: TextStyle(
-                        fontFamily: 'Ariel',
                         fontSize: getSmallTextFontSIze() + 1,
                         color: ColorConstants.black,
                         fontWeight: FontWeight.normal,
-                        letterSpacing: 3
                     )),
                 TextSpan(
                   text: " $description",
                   style: TextStyle(
-                    fontFamily: 'Ariel',
                     fontSize: getSmallTextFontSIze() + 1,
                     color: ColorConstants.primaryColor,
                     fontWeight: FontWeight.bold,

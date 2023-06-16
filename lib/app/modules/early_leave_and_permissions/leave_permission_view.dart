@@ -57,28 +57,26 @@ class LeavePermissionView extends GetView<EarlyLeaveController>{
                   ),
                   Flexible(
                       flex: 8,
-                      child: Container(
-                        width: 100.w,
-                        decoration: getEditTextDecoration(),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 5),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: addText('dd/mm/yyyy', getNormalTextFontSIze(),
-                                  ColorConstants.gretTextColor, FontWeight.normal),
-                            ),
-                            Icon(
-                              Icons.arrow_drop_down_rounded,
-                              size: getLargeTextFontSIze() * 1.5,
-                              color: ColorConstants.lightTextColor,
-                            )
-                          ],
+                      child: GestureDetector(
+                        onTap: (){
+                          showPicker(context);
+                        },
+                        child: Container(
+                          width: 100.w,
+                          decoration: getEditTextDecoration(),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 14),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: addText('dd/mm/yyyy', getNormalTextFontSIze(),
+                                    ColorConstants.gretTextColor, FontWeight.normal),
+                              ),
+                            ],
+                          ),
                         ),
-                      )),
-
-
-
+                      ),
+                  ),
                 ],
               ),
             ),
@@ -108,13 +106,18 @@ class LeavePermissionView extends GetView<EarlyLeaveController>{
                   ),
                   Flexible(
                       flex: 8,
-                      child: Container(
-                        width: 100.w,
-                        decoration: getEditTextDecoration(),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 15),
-                        child: addText('hh:mm', getNormalTextFontSIze(),
-                            ColorConstants.gretTextColor, FontWeight.normal),
+                      child: GestureDetector(
+                        onTap: (){
+                          showTimePicker(context: context, initialTime: TimeOfDay.now());
+                        },
+                        child: Container(
+                          width: 100.w,
+                          decoration: getEditTextDecoration(),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          child: addText('hh:mm', getNormalTextFontSIze(),
+                              ColorConstants.gretTextColor, FontWeight.normal),
+                        ),
                       ))
                 ],
               ),
@@ -146,13 +149,18 @@ class LeavePermissionView extends GetView<EarlyLeaveController>{
                   ),
                   Flexible(
                       flex: 8,
-                      child: Container(
-                        width: 100.w,
-                        decoration: getEditTextDecoration(),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 15),
-                        child: addText('hh:mm', getNormalTextFontSIze(),
-                            ColorConstants.gretTextColor, FontWeight.normal),
+                      child: GestureDetector(
+                        onTap: (){
+                          showTimePicker(context: context, initialTime: TimeOfDay.now());
+                        },
+                        child: Container(
+                          width: 100.w,
+                          decoration: getEditTextDecoration(),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          child: addText('hh:mm', getNormalTextFontSIze(),
+                              ColorConstants.gretTextColor, FontWeight.normal),
+                        ),
                       ))
                 ],
               ),

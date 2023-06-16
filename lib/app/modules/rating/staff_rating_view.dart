@@ -117,7 +117,7 @@ class StaffRatingView extends GetView<RatingController>{
               onTap: (){
                 showToast('Rating Submitted');
               },
-              child: CircularBorderedButton(width: 30.w, text: 'SEND'),
+              child: CircularBorderedButton(width: 30.w, text: 'SUBMIT'),
             )
           ],
         ),

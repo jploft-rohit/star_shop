@@ -15,7 +15,6 @@ import '../../../common/success_dialog.dart';
 import '../../../common/utils.dart';
 import '../../controller/home_controller.dart';
 import '../wallet/sub_pages/purchase/transaction.dart';
-import 'add_money_dialogs/top_up_family_dialog.dart';
 
 class TransactionRecordView extends GetView<TransactionRecordController> {
   const TransactionRecordView({super.key});
@@ -48,7 +47,7 @@ class TransactionRecordView extends GetView<TransactionRecordController> {
                             width: 10,
                           ),
                           SvgPicture.asset(
-                            'assets/images/ic_teacher.svg',
+                            'assets/images/ic_staff.svg',
                             height: getHeadingTextFontSIze(),
                           ),
                           const SizedBox(
