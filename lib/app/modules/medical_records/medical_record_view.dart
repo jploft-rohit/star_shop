@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -20,11 +20,9 @@ class MedicalRecordView extends GetView<MedicalRecordController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstants.white,
-      floatingActionButton: Obx(() => controller.showFab.value ? FlipInX(
-        child: CustomFAB(isIcon: true, buttonText: 'Add Medical\nRecord',icon: Icons.add,onButtonClicked: (){
-          Get.dialog(const AddMedicalFilesDialog());
-        },),
-      ) : const SizedBox.shrink()),
+      floatingActionButton: Obx(() => controller.showFab.value ? CustomFAB(isIcon: true, buttonText: 'Add Medical\nRecord',icon: Icons.add,onButtonClicked: (){
+        Get.dialog(const AddMedicalFilesDialog());
+      },) : const SizedBox.shrink()),
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(5.h),
           child: const AppHeader(
@@ -256,7 +254,8 @@ class MedicalRecordView extends GetView<MedicalRecordController> {
                                                 controller.infectiousDiseaseList2[index]['isSelected'] = -1;
                                                 controller.infectiousDiseaseList2[index]['isSelected1'] = int.tryParse(index1.toString()) ?? 0;
                                                 // controller.update();
-                                              });
+                                               },
+                                             );
                                             },
                                           ),
                                         ),

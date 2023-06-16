@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -19,9 +19,9 @@ class OrderCanteenView extends GetView<OrderCanteenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstants.white,
-      floatingActionButton: Obx(() => controller.selectedDayPos.value == 0 ? JelloIn(child: CustomFAB(isIcon: true, buttonText: 'Create Order',icon: Icons.add,onButtonClicked: (){
+      floatingActionButton: Obx(() => controller.selectedDayPos.value == 0 ? CustomFAB(isIcon: true, buttonText: 'Create Order',icon: Icons.add,onButtonClicked: (){
         Get.toNamed(Routes.createOrderView);
-      },)) : const SizedBox.shrink()),
+      },) : const SizedBox.shrink()),
       body: Column(
         children: [
           Center(

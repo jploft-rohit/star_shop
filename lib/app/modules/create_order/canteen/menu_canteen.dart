@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -40,9 +40,9 @@ class CanteenMenuView extends GetView<CanteenMenuController>{
                 physics: const BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisExtent: 30.h,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 1.h),
+                    mainAxisExtent: 26.h,
+                    crossAxisSpacing: 18,
+                    mainAxisSpacing: 10),
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {},
                   child: Container(
@@ -66,7 +66,7 @@ class CanteenMenuView extends GetView<CanteenMenuController>{
                         //   ),
                         // ),
                             child: Image.asset('assets/images/im_canteen_0${index+1}.png',
-                              width: double.infinity,height: 20.h,fit: BoxFit.cover,)),
+                              width: double.infinity,height: 16.h,fit: BoxFit.cover,)),
                         Padding(
                           padding:  EdgeInsets.all(1.h),
                           child: Column(
@@ -106,9 +106,8 @@ class CanteenMenuView extends GetView<CanteenMenuController>{
                                     ),
                                   ),
 
-                                ],),
-
-
+                                ],
+                              ),
                             ],
                           ),
                         ),

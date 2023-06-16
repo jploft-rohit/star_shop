@@ -85,12 +85,12 @@ class MessageView extends GetView<MessageController>{
                          style: TextStyle(fontSize: getNormalTextFontSIze()),
                          decoration: InputDecoration(
                              hintText: 'Message'.tr,
-                             prefixIcon: const Icon(
-                               Icons.emoji_emotions_outlined,
-                               color: Colors.grey,
-                               size: 20,
-                             ),
-                             prefixIconConstraints: const BoxConstraints(maxHeight: 10,maxWidth: 10),
+                             // prefixIcon: const Icon(
+                             //   Icons.emoji_emotions_outlined,
+                             //   color: Colors.grey,
+                             //   size: 20,
+                             // ),
+                             // prefixIconConstraints: const BoxConstraints(maxHeight: 5,maxWidth: 70),
                              suffixIcon: Row(
                                mainAxisSize: MainAxisSize.min,
                                children: [
@@ -100,9 +100,9 @@ class MessageView extends GetView<MessageController>{
                                ],
                              ),
                              hintStyle: TextStyle(
-                                 fontSize: getNormalTextFontSIze(),
+                                 fontSize: 17.sp,
                                  color: ColorConstants.gretTextColor.withOpacity(0.8)),
-                             contentPadding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                             // contentPadding: const EdgeInsets.fromLTRB(10, 0, 30, 0),
                              border: InputBorder.none),
                        ),
                    ),

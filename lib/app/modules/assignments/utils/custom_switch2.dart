@@ -67,8 +67,8 @@ class _CustomSwitch2State extends State<CustomSwitch2>
                 : widget.onChanged(false);
           },
           child: Container(
-            width: widget.width ?? 48.0,
-            height: widget.height ?? 24.0,
+            width: widget.width,
+            height: widget.height,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6.0),
               border: widget.value
@@ -85,8 +85,8 @@ class _CustomSwitch2State extends State<CustomSwitch2>
                 alignment:
                     widget.value ? Alignment.centerRight : Alignment.centerLeft,
                 child: Container(
-                  width: widget.switchWidth ?? 20.0,
-                  height: widget.switchHeight ?? 20.0,
+                  width: widget.switchWidth,
+                  height: widget.switchHeight,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
                     color:

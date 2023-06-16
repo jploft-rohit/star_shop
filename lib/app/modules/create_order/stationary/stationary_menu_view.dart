@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:star_shop/common/color_constants.dart';

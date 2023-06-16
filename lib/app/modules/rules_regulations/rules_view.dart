@@ -28,16 +28,31 @@ class RulesView extends GetView<RulesController>{
                   children: [
 
                     addText('Responsibilities of School Bus Drivers& Supervisors:', getHeadingTextFontSIze(), ColorConstants.black, FontWeight.bold),
-                    SizedBox(height: 2.h,),
-                    addText('Aims and Principals', getSubheadingTextFontSIze(), ColorConstants.black, FontWeight.bold),
-                    SizedBox(height: 2.h,),
-                    addText('Rules'.tr, getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
                     SizedBox(height: 1.h,),
+                    Text(
+"""a. Education professionals should commit to protecting children from bullying, neglect, and exploitation.
+b. Educational professionals should avoid disclosing confidential information about students and their families.
+c. Education professionals must be aware of Emirati culture and traditions and highly regard the values of Islam.
+d. Education professionals must refrain from smoking in the workplace and using unauthorized substances.
+e. Education professionals must not discuss socially unacceptable behaviors like gender identity and homosexuality.""", style: TextStyle(fontSize: getNormalTextFontSIze(),color: ColorConstants.black,fontWeight: FontWeight.normal,height: 1.3),textAlign: TextAlign.start),
+                    SizedBox(height: 2.h),
+                    addText('Aims and Principals', getSubheadingTextFontSIze(), ColorConstants.black, FontWeight.bold),
+                    SizedBox(height: 1.h),
+                    Text(
+"""a. Education professionals should commit to protecting children from bullying, neglect, and exploitation.
+b. Educational professionals should avoid disclosing confidential information about students and their families.
+c. Education professionals must be aware of Emirati culture and traditions and highly regard the values of Islam.
+d. Education professionals must refrain from smoking in the workplace and using unauthorized substances.
+e. Education professionals must not discuss socially unacceptable behaviors like gender identity and homosexuality.""", style: TextStyle(fontSize: getNormalTextFontSIze(),color: ColorConstants.black,fontWeight: FontWeight.normal,height: 1.3),textAlign: TextAlign.start),
+
+                    // SizedBox(height: 2.h,),
+                    // addText('Rules'.tr, getNormalTextFontSIze(), ColorConstants.black, FontWeight.normal),
+                    SizedBox(height: 3.h),
                     Row(
                        crossAxisAlignment: CrossAxisAlignment.start,
                       // mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Obx(() => Container(
+                        Obx(() => SizedBox(
                           height: 3.h,
                           child: Checkbox(
                             checkColor: ColorConstants.primaryColor,

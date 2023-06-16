@@ -65,6 +65,7 @@ class AppDrawer extends GetView<HomeController> {
                               .bottomNavigationKey
                               .currentState
                               ?.setPage(2);
+                          Get.find<MyProfileController>().controller.index = 0;
                         },
                         child: buildItems('Account'),
                       ),
@@ -84,17 +85,14 @@ class AppDrawer extends GetView<HomeController> {
                               .bottomNavigationKey
                               .currentState
                               ?.setPage(2);
-                          Get.find<MyProfileController>().controller.index = 3;
+                          Get.find<MyProfileController>().controller.index = 2;
                         },
                         child: buildItems('Schools'),
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.find<BaseController>()
-                              .bottomNavigationKey
-                              .currentState
-                              ?.setPage(2);
-                          Get.find<MyProfileController>().controller.index = 2;
+                          Get.find<BaseController>().bottomNavigationKey.currentState?.setPage(2);
+                          Get.find<MyProfileController>().controller.index = 3;
                         },
                         child: buildItems('Staff'),
                       ),
@@ -381,7 +379,7 @@ class AppDrawer extends GetView<HomeController> {
               GestureDetector(
                 onTap: () {
                   Get.back();
-                  Get.dialog(Scaffold(
+                  Get.to(Scaffold(
                     backgroundColor: ColorConstants.white,
                     appBar: PreferredSize(
                         preferredSize: Size.fromHeight(7.h),
